@@ -40,9 +40,6 @@ input[disabled]{
     background-color:#D95E32;
 }
 
-a{
-    color:#538C51;
-}
 
 /* Descendant Combinator */
 div span{
@@ -60,4 +57,31 @@ div .extra{
 
 h2 ~ h4{
     color : #D95E32;
+}
+
+a{
+    color:#538C51;
+}
+/* Pseudo Class */
+
+a:hover{
+    text-decoration: none;
+}
+
+/* a:visited{
+    color: red;
+} */
+
+/* ul :first-child a:hover{
+    text-decoration: none;
+} */
+
+/* Pseudo Elements */
+
+div::before{
+    content: "...";
+}
+
+div::after{
+    content: "...";
 }
