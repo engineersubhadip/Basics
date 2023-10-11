@@ -23,7 +23,13 @@ header{
     background-color: #F2B84B;
 }
 
+/* Class selector */
 .mid-text {
     font-weight: bolder;
     font-size: medium;
+}
+
+/* ID selector */
+#head-text {
+    text-decoration: underline;
 }
