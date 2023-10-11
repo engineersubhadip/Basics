@@ -33,3 +33,9 @@ header{
 #head-text {
     text-decoration: underline;
 }
+
+/* Attribute selector */
+
+input[disabled]{
+    background-color:#D95E32;
+}
