@@ -9,8 +9,16 @@ h2{
 ul :first-child a:hover{
     text-decoration: none;
 } */
+/* 
 
-*{
-    /* This is a universal selector */
-    background-color : #D7D7D9;
+/* Providing background color to body tag instead of using universal selector */
+
+body{
+    background-color: #F5DE83;
+
+}
+/* Type selector */
+
+header{
+    background-color: #AFBF73;
 }
