@@ -43,3 +43,12 @@ input[disabled]{
 a{
     color:#538C51;
 }
+
+/* Descendant Combinator */
+div span{
+    color:#538C51;
+}
+
+div .extra{
+    text-decoration: underline;
+}
