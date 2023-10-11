@@ -1,4 +1,4 @@
-h4 {
+/* h4 {
     font-size: 25px;
 }
 
@@ -8,4 +8,9 @@ h2{
 
 ul :first-child a:hover{
     text-decoration: none;
+} */
+
+*{
+    /* This is a universal selector */
+    background-color : #D7D7D9;
 }
