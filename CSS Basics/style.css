@@ -52,3 +52,12 @@ div span{
 div .extra{
     text-decoration: underline;
 }
+
+/* Child Combinator */
+/* .mid-text > .extra{
+    text-decoration: underline;
+} */
+
+h2 ~ h4{
+    color : #D95E32;
+}
