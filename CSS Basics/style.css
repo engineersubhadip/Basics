@@ -20,5 +20,10 @@ body{
 /* Type selector */
 
 header{
-    background-color: #AFBF73;
+    background-color: #F2B84B;
+}
+
+.mid-text {
+    font-weight: bolder;
+    font-size: medium;
 }
