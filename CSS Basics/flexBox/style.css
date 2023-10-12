@@ -31,6 +31,10 @@ html {
 
 #child1 {
     /* flex-basis: 100%; */
-    
+    flex-grow: 3;
+}
+
+#child2 {
+    flex-grow: 1;
 }
 
