@@ -19,20 +19,20 @@ body{
 }
 /* Type selector */
 
-header{
+/* header{
     background-color: #F2B84B;
-}
+} */
 
 /* Class selector */
-.mid-text {
+/* .mid-text {
     font-weight: bolder;
     font-size: medium;
-}
+} */
 
 /* ID selector */
-#head-text {
+/* #head-text {
     text-decoration: underline;
-}
+} */
 
 /* Attribute selector */
 
@@ -42,13 +42,13 @@ input[disabled]{
 
 
 /* Descendant Combinator */
-div span{
+/* div span{
     color:#538C51;
-}
+} */
 
-div .extra{
+/* div .extra{
     text-decoration: underline;
-}
+} */
 
 /* Child Combinator */
 /* .mid-text > .extra{
@@ -78,10 +78,18 @@ a:hover{
 
 /* Pseudo Elements */
 
-div::before{
+/* div::before{
     content: "...";
-}
+} */
 
-div::after{
+/* div::after{
     content: "...";
+} */
+
+/* div > span:nth-child(2) span{
+    color: slategray;
+} */
+
+div  h4{
+    color: #538C51;
 }
