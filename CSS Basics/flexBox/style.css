@@ -14,7 +14,7 @@ html {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: start;
-    align-items: center;
+    align-items: start;
     align-content: start;
 }
 
@@ -29,12 +29,12 @@ html {
     
 }
 
-#child1 {
-    /* flex-basis: 100%; */
-    flex-grow: 3;
-}
+/* #child1 {
+    flex-basis: 100%;
+    /* flex-grow: 3; */
+
 
 #child2 {
-    flex-grow: 1;
+    flex-basis: 100%;
 }
 
