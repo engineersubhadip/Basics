@@ -12,9 +12,10 @@ html {
     display: flex;
     height: 400px;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    align-content: start;
 }
 
 #parent div{
@@ -23,9 +24,13 @@ html {
     padding: 20px;
     background-color: bisque;
     min-width: 100px;
-    max-width: 200px;
-    /* min-height: 100px; */
-    max-height: 100px;
+    /* max-width: 200px; */
+    max-height: 100px; 
+    
+}
+
+#child1 {
+    /* flex-basis: 100%; */
     
 }
 
