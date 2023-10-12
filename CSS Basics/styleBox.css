@@ -1,0 +1,26 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+.divOne {
+    width: 175px;
+    border:solid red 5px;
+    padding:10px;
+    margin-bottom: 5px;
+    
+}
+
+.childDivOne{
+    border:solid greenyellow 5px;
+
+}
+
+.divTwo {
+    width:175px;
+    border:solid blue 5px;
+    padding: 10px;
+}
