@@ -1,14 +1,42 @@
-// ! Getting the Name Initials
+// ! Age Difference between the Youngest and the Oldest
 
-function f(ele){
-      return ele[0];
-}
+const input = [
+      {
+        name: "John",
+        age: 13,
+      },
+      {
+        name: "Mark",
+        age: 56,
+      },
+      {
+        name: "Rachel",
+        age: 45,
+      },
+      {
+        name: "Nate",
+        age: 67,
+      },
+      {
+        name: "Jennifer",
+        age: 65,
+      },
+    ];
 
-const input = "George Raymond Richard Martin";
 
-const output = input.split(" ").map(f).reduce(function (acc,curr){
-      acc += curr;
+
+let outputYoungest = input.reduce(function (acc,curr){
+      if (curr.age < acc){
+            acc = curr.age;
+      }
       return acc;
-},"")
+},100)
 
-console.log(output);
+let outputOldest = input.reduce(function (acc,curr){
+      if (curr.age > acc){
+            acc = curr.age;
+      }
+      return acc;
+},0)
+
+console.log(outputOldest - outputYoungest);
