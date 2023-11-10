@@ -1,12 +1,14 @@
+// ! Getting the Name Initials
+
 function f(ele){
-      return ele > 0;
+      return ele[0];
 }
 
-const input = [1, -4, 12, 0, -3, 29, -150];
+const input = "George Raymond Richard Martin";
 
-const output = input.filter(f).reduce(function(acc,curr){
-      acc = acc + curr;
+const output = input.split(" ").map(f).reduce(function (acc,curr){
+      acc += curr;
       return acc;
-},0)
+},"")
 
 console.log(output);
