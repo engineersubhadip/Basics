@@ -10,6 +10,32 @@ const products = [
     ];
 
 
+// ! Department Wise Price.
+
+// * Target One:- {"cat1" : [1,2,3,4], "cat2" : [12,13,14,15]}
+
+const tarOne = products.reduce(function(acc,curr){
+      let currentCategory = curr.category;
+      if (!acc[currentCategory]){
+            acc[currentCategory] = [curr.price];
+      }else{
+            acc[currentCategory].push(curr.price);
+      }
+      return acc;
+},{})
+
+// * Target Two:- {"cat1" : 100; "cat2" : 200...}
+const tarTwo = Object.keys(tarOne).reduce(function (acc,curr){
+      let sumVal = tarOne[curr].reduce(function (sum,price){
+            sum = sum+price;
+            return sum;
+      },0)
+      acc[curr] = sumVal;
+      return acc;
+},{})
+
+
+console.log(tarTwo);
 // const output = products.reduce(function (acc,curr){
 //       if (curr.category == 'Electronics'){
 //             acc.push(curr.name);
@@ -42,18 +68,3 @@ const products = [
 
 // console.log(output);
 
-function f(ele){
-      if (ele.category == "Electronics"){
-            return true;
-      }else{
-            return false;
-      }
-}
-
-
-const output = products.filter(f).reduce(function (acc,curr){
-      acc = acc + curr.price;
-      return acc;
-},0)
-
-console.log(output);
