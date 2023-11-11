@@ -5,16 +5,10 @@ let student =[
       {name:"Tiger",rollNumber:7,marks:55}
      ];
 
-function f(ele){
-      let currentMarks = ele.marks;
-      let currentRoll = ele.rollNumber;
-      if (currentMarks > 60 && currentRoll > 15){
-            return true;
-      }else{
-            return false;
-      }
-}
-
-const output = student.filter(f);
+const output = student.reduce(function(acc,curr){
+      let currentMarks = curr.marks;
+      acc = acc + currentMarks;
+      return acc;
+},0)
 
 console.log(output);
