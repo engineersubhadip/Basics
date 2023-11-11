@@ -1,42 +1,54 @@
-// ! Details of Student with average score above 90
+// !return an array of objects containing only the categories that have an average price above 50.
 
-const students = [
-      { name: "Alice", scores: [90, 85, 92] },
-      { name: "Bob", scores: [75, 80, 85] },
-      { name: "Charlie", scores: [90, 95, 85] },
-      { name: "David", scores: [100, 100, 100] }
+const products = [
+      { name: "Product 1", price: 20, category: "Electronics" },
+      { name: "Product 2", price: 30, category: "Clothes" },
+      { name: "Product 3", price: 40, category: "Electronics" },
+      { name: "Product 4", price: 50, category: "Clothes" },
+      { name: "Product 5", price: 60, category: "Clothes" },
+      { name: "Product 6", price: 70, category: "Electronics" },
+      { name: "Product 7", price: 80, category: "Clothes" },
+      { name: "Product 8", price: 90, category: "Electronics" },
     ];
 
+// * Target 1: {'Electronics':[10,20,30], 'Clothes':[30,40,15]}
 
-//* Target 1:- {Alice:85, Bob:90....}
+const tarOne = products.reduce(function(acc,curr){
+      let currentCategory = curr.category;
+      let currPrice = curr.price;
 
-const tarOne = students.reduce(function (acc,curr){
-      let currentStudent = curr.name;
-      let currentStudentTotal = curr.scores.reduce(function(sum,runVal){
-            sum = sum + runVal;
-            return sum;
-      },0)
-      let currentStudentAverage = currentStudentTotal/curr.scores.length;
+      if (!acc[currentCategory]){
+            acc[currentCategory] = [currPrice];
+      }else{
+            acc[currentCategory].push(currPrice);
+      }
 
-      // ? Time to store the details of the Student
-      acc[currentStudent] = currentStudentAverage;
       return acc;
 },{})
 
-function finalPush(acc,record){
-      let currentName = record[0];
-      let currentAverage = record[1];
+// * Target Two:- {'Electronics':52, 'Clothes':55}
 
-      if (currentAverage > 90){
-            acc.push({'name' : currentName, 'average': currentAverage});
+const tarTwo = Object.keys(tarOne).reduce(function(acc,curr){
+      let currentCategory = curr;
+      let currentPrice = tarOne[curr].reduce(function(sum,price){
+            sum = sum + price;
+            return sum;
+      },0)
+
+      acc[currentCategory] = currentPrice/tarOne[curr].length;
+      return acc;
+},{})
+
+// * Target Three:- The Final Touch
+
+const tarThree = Object.keys(tarTwo).reduce(function(acc,curr){
+      let currentCategory = curr;
+      let currentAverage = tarTwo[currentCategory];
+
+      if (currentAverage > 50){
+            acc.push({'category':currentCategory,'average':currentAverage});
       }
       return acc;
-}
+},[])
 
-const tarTwo = Object.entries(tarOne).reduce(finalPush,[]);
-
-console.log(tarTwo);
-// const finalOutput = Object.keys(studentsAbove90).reduce(function (acc,curr){
-
-// },[])
-
+console.log(tarThree);
