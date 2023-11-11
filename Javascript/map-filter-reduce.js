@@ -15,6 +15,8 @@ const employees = [
  * Over here we will list all the salaries for every department
  */
 
+
+
 const departmentSalaries = employees.reduce(function(acc,curr){
       let currentDepartment = curr.department;
       let currentSalary = curr.salary;
