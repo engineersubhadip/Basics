@@ -1,3 +1,5 @@
+// https://www.scaler.com/help_requests/871219/?ref=join-call-now
+
 Promise.resolve("foo")
 .then(function fh1(val){
       return new Promise(function exec(res,rej){
@@ -17,3 +19,43 @@ Promise.resolve("foo")
 .then(function fh3(val){
       console.log(val);
 })
+
+mtq:[]
+callstack:[f()]
+
+//! TEMP
+{
+      state:fulfill;
+      value:foobar;
+      onfulfill:[];
+      onreject:[]
+}
+
+{
+      state:fulfill
+      value:foo;
+      onfulfill:[fh1];
+      onreject:[]
+}
+
+{
+      state : pending;
+      value:undefined;
+      onfulfill:[fh2];
+      onreject:[]
+}
+
+{
+      state : pending;
+      value:undefined;
+      onfulfill:[fh3];
+      onreject:[]
+}
+
+/////
+{
+      state : pending;
+      value:undefined;
+      onfulfill:[];
+      onreject:[]
+}
