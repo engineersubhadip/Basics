@@ -10,7 +10,7 @@ function downloadContent(url,callback1){
       setTimeout(function (){
             console.log("Download Complete.");
             const data = "Little Red Riding Hood";
-            callback1(data);
+            callback1(data);  // If we omit this line the o/p will be Starting Download From ... and then Download Complete -> Inversion Control Issue
       },4000);
 }
 
