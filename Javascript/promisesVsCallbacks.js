@@ -8,6 +8,7 @@
 function downloadContent(url,callback1){
       console.log("Starting Download from url",url);
       setTimeout(function (){
+            console.log("The url",url,"is still accessible");
             console.log("Download Complete.");
             const data = "Little Red Riding Hood";
             callback1(data);  // If we omit this line the o/p will be Starting Download From ... and then Download Complete -> Inversion Control Issue
