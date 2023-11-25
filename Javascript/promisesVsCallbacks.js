@@ -5,39 +5,73 @@
 
 // * Using only callbacks:-
 
-function downloadContent(url,callback1){
-      console.log("Starting Download from url",url);
-      setTimeout(function (){
-            console.log("The url",url,"is still accessible");
-            console.log("Download Complete.");
-            const data = "Little Red Riding Hood";
-            callback1(data);  // If we omit this line the o/p will be Starting Download From ... and then Download Complete -> Inversion Control Issue
-      },4000);
-}
-
-function writeAndSaveFile(content,callback2){
-      console.log("We are now saving your File....");
-      setTimeout(function (){
-            console.log("We are done saving your file");
-            const fileName = "newDocument.txt";
-            callback2(fileName);
+function download(url,callback1){
+      console.log("We are now starting the download of your file..."); //*1
+      setTimeout(function one(){
+            console.log("We have finished downloading the content of the file.");  //*2
+            const message = "This is the sample message";
+            callback1(message);
       },6000)
 }
 
-function upload(url,file,callback3){
-      console.log("We are now saving your file",file,"at",url);
-      setTimeout(function (){
-            console.log("We have successfully saved your File !!");
-            callback3(url);
-      },3000);
+function writeAndSave(downloadContent,callback2){
+      console.log("We are now starting to save the content of your file..."); //*4
+      setTimeout(function two(){
+            console.log("We are done saving the content of the file.") //*5
+            const fileName = "sampleFile.txt";
+            callback2(fileName);
+      },5000)
 }
 
-downloadContent("www.paraphrase.com",function cb1(data){
-      console.log("The downloaded data is",data);
-      writeAndSaveFile(data, function cb2(fileName){
-            console.log("After saving your new File name is",fileName);
-            upload("www.dropbox.com",fileName,function cb3(newURL){
-                  console.log("We have saved your file at location",newURL);
+function upload(url,fileName,callback3){
+      console.log("We are now uploading your file",fileName,"at",url); //*7
+      setTimeout(function three(){
+            console.log("We have uploaded the content of the file at",url); //*8
+            const message = "Success";
+            callback3(message);
+      },3000)
+}
+
+
+download("www.sify.co.in",function cb1(downloadContent){
+      console.log("The downloaded content is",downloadContent); //*3
+      writeAndSave(downloadContent,function cb2(fileName){
+            console.log("The returned file Name is",fileName); //*6
+            upload("www.dropbox.co.in",fileName,function cb3(response){
+                  console.log("The message response is",response); //*9
             })
       })
 })
+
+console.log("---------------------------------------------------------------")
+
+// mapping:-
+// [
+// url:-"www.dropbox.co.in"
+// callback1:- cb1
+// downloadContent:-"This is the sample message"
+// callback2:-cb2;
+// fileName:- sampleFile.txt
+// callback3:- cb3;
+// response:-Success
+
+// ]
+
+// callstack:-
+// [
+
+
+
+
+// ]
+
+// eventqueue:-
+// [
+//       three
+// ]
+
+// runtime:-
+// [
+// :- 3s;
+
+// ]
