@@ -23,13 +23,6 @@ Promise.resolve("foo")
 mtq:[]
 callstack:[f()]
 
-//! TEMP
-{
-      state:fulfill;
-      value:foobar;
-      onfulfill:[];
-      onreject:[]
-}
 
 {
       state:fulfill
@@ -39,15 +32,15 @@ callstack:[f()]
 }
 
 {
-      state : pending;
-      value:undefined;
+      state : fulfilled;
+      value:foobar;
       onfulfill:[fh2];
       onreject:[]
 }
 
 {
-      state : pending;
-      value:undefined;
+      state : fulfilled;
+      value:foobar;
       onfulfill:[fh3];
       onreject:[]
 }
