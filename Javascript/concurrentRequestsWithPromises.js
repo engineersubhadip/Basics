@@ -52,6 +52,8 @@ fetchUserData("www.facebook.com")
 .then(function fetchPostDataHandler(userPosts){
       return fetchCommentData(userPosts);
 })
-.then(function fetchCommentData(userCommentData){
+.then(function fetchCommentDataHandler(userCommentData){
       console.log("The final user details are",userCommentData);
-})
+});
+
+
