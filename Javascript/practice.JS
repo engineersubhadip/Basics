@@ -1,7 +1,13 @@
-function f(){
-      return 24;
-      console.log("Hello");
+function fetchData() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve("Data"),1000);
+  })
 }
 
-let x = f();
-console.log(x);
+async function logData() {
+  const result = await fetchData();
+  console.log(result);
+}
+
+logData();
+console.log("End");
