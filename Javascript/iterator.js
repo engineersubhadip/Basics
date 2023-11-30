@@ -1,6 +1,5 @@
 function customIterator(array){
       let index = 0;
-
       function next(){
             if (index >= array.length){
                   return undefined;
