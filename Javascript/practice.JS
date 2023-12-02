@@ -1,52 +1,23 @@
-var teacher = "Peter";
+// The task is to print 1 after 1sec ; 2 after 2sec...
 
-function fun() {
-  var teacher = "Parker";
+function timer(){
+  let count = 1;
+  function newFun(){
+    let newCounter = count;
+    let delay = count*1000;
 
-  let content = "JS";
+    setTimeout(() => {
+      console.log(newCounter, "and the delay is", delay);
+    }, delay);
 
-  if(content == "IJS"){
-    
-    var hours = "120+";
+    count += 1;
   }
-  // * Here we are trying to access hours outside of the Block Scope
-  // * During the parsing phase, we will also enter inside the Block Scope
-  // * And we will try to assign Scope to the variables/function.
-
-  // * During the Execution Phase we will check if we can enter the Block scope or not.
-  // * Lets say if we get a FALSY Value for the Block Scope then we will not enter the Block Scope.
-  console.log(teacher,content,hours);
+  return newFun; // Fix: Return newFun instead of callback
 }
 
-fun();
+let value = timer();
 
-console.log(teacher);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// {
-
-//   function fun(){
-//     console.log("123")
-//   }
-
-// }
-
-
-// fun();
+value();
+value();
+value();
+value();
