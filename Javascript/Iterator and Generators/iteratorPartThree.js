@@ -27,4 +27,3 @@ nextVal.next();
 nextVal.next();
 nextVal.next();
 nextVal.next();
-nextVal.next();
