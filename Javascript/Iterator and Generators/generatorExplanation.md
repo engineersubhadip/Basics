@@ -57,3 +57,5 @@ Beyond that if we have any other `yield` or `console.log`. Then none of them wil
 2. When you call them they do not start their execution immediately.
 3. When you call the `next()` function that is when you start the execution. And you momentarily halt the execution on the first `yield`. Then you call `next()` again, the `yield` that you last got after that you start execution until you meet the next `yield`.
 4. If you put a `return` keyword that is like the last `yield` statement. Post which any `yield` or `console.log()` is actually going to work.
+5. Lets say we have 2 `value.next()` and 2 yields one in line 5 and another in line 7. When we encounter the first yield we temporarily return from line 5. When we make the second `value.next()` we resume our operation from line 5 only.
+6. Inside `value.next()` we are not passing any argument. So the default argument passed is `undefined`.
