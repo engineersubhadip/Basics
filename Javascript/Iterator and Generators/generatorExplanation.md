@@ -49,3 +49,11 @@ Note:-
 If somewhere in the function we have a return keyword . That line will be the last to execute in the form of {value : returnValue , done:`true`}.
 
 Beyond that if we have any other `yield` or `console.log`. Then none of them will be executed. Even if you keep calling `iteratorObject.next()` it will throw us {value : undefined, done : true}.
+
+
+<-: FINAL TAKEAWAY :->
+
+1. Generator functions are a bit different than the normal functions.
+2. When you call them they do not start their execution immediately.
+3. When you call the `next()` function that is when you start the execution. And you momentarily halt the execution on the first `yield`. Then you call `next()` again, the `yield` that you last got after that you start execution until you meet the next `yield`.
+4. If you put a `return` keyword that is like the last `yield` statement. Post which any `yield` or `console.log()` is actually going to work.
