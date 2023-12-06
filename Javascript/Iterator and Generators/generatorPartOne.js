@@ -11,3 +11,9 @@ function* fetchNextElement(){
 let result = fetchNextElement();
 
 console.log("The first value is",result.next());
+console.log("The second value is",result.next());
+console.log("The third value is",result.next());
+console.log("The forth value is",result.next());
+console.log("The fifth value is",result.next());
+console.log("The sixth value is",result.next());
+console.log("The seventh value is",result.next());
