@@ -5,4 +5,3 @@ Using the function `next()` we access the `value` property stores the next value
 The `done` property tells us if we have / have not consumed all the values in our collection.
 If `true` it means all the values are consumed.
 If `false` it means the values are still left to be consumed.
-
