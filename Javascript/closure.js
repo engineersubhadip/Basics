@@ -1,14 +1,13 @@
-function x(){
-      var a = 7;
-      function y(){
-            console.log(a);
+function outer(){
+      let count = 0;
+      function inner(){
+            count+=1;
+            console.log(count);
       }
-      a = 1000;
-      return y;
+      return inner;
 }
 
-let z = x();
-
-console.log(z);
-
-z();
+let res = outer();
+console.log(res);
+res();
+res();
