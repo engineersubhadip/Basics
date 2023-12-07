@@ -1,16 +1,16 @@
 function* fetchNextElement(){
       const x = 10;
       console.log(yield 11);
-      console.log("We are entering the after the yield");
+      console.log("Entering after the yield");
       const y = x + (yield 30);
-      console.log("The value of y is",y);
+      console.log("Value of y is",y);
 }
 
 const iter = fetchNextElement();
 
 console.log("First",iter.next());
-console.log("Second",iter.next(74))
-console.log("Third",iter.next())
+console.log("Second",iter.next())
+console.log("Third",iter.next(17))
 
 
 /*
