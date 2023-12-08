@@ -24,24 +24,24 @@ function placeOrder(order){
 
 function processOrder(placeOrderResponse){
       return new Promise(function exec(resolve,reject){
-                  console.log("We are now preparing to process your order...");
-                  setTimeout(function callbackTwo(){
-                        console.log("We have now processed your order.");
-                        let response = "Please take your order";
-                        resolve(response);
-                  },7000)
+            console.log("We are now preparing to process your order...");
+            setTimeout(function callbackTwo(){
+                  console.log("We have now processed your order.");
+                  let response = "Please take your order";
+                  resolve(response);
+            },7000)
       })
 }
 
 
 function orderBilling(processOrderResponse){
       return new Promise(function exec(resolve,reject){
-                  console.log("We are printing your Bill...");
-                  setTimeout(function callbackThree(){
-                        console.log("We are done printing your bill.");
-                        let response = "$"+"13.45";
-                        resolve(response);
-                  },2000)
+            console.log("We are printing your Bill...");
+            setTimeout(function callbackThree(){
+                  console.log("We are done printing your bill.");
+                  let response = "$"+"13.45";
+                  resolve(response);
+            },2000)
       })
 }
 
@@ -55,8 +55,7 @@ placeOrder("coffee")
       return orderBilling(data);
 })
 .then(function three(data){
-
-            console.log("Your Bill is",data);
+      console.log("Your Bill is",data);
       
 })
 .catch(function oneReject(errorMessage){
