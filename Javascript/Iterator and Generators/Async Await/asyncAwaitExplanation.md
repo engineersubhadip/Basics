@@ -1,0 +1,1 @@
+1. async Function `always returns a Promise Object`
