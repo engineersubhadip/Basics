@@ -47,5 +47,5 @@ download("www.sify.co.in")
       return upload("www.dropbox.in/",value);
 })
 .then(function uploadHandler(value){
-      console.log("The message type is",value);
+      return console.log("The message type is",value);
 })
