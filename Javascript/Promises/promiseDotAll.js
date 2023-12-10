@@ -1,5 +1,9 @@
-// Lets say the task is to do download-write-upload 3 times,
-// Then we might end up using lot of await keyword.
+// Lets say we have 3 independent tasks.
+// Lets say we want to download data from source1, source2 and source3.
+// It is not advisable that we first download from source1 , then from source2, then from source3.
+//  By doing so we are making a dependency among the tasks.
+
+// We want to parallelly download from 3 sources and these tasks are independent of each other.
 
 function download(downloadURL){
       return new Promise(function exec(resolve,reject){
