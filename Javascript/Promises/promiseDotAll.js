@@ -5,79 +5,24 @@
 
 // We want to parallelly download from 3 sources and these tasks are independent of each other.
 
-function download(downloadURL){
+function download(downloadURL,time){
       return new Promise(function exec(resolve,reject){
             console.log("We are now downloading the content from the url",downloadURL,"...");
             setTimeout(function callbackOne(){
                   console.log("We have downloaded the content from the given url.");
                   let content = "The Phoenix must burn to emerge";
                   resolve(content);
-            },4000);
+            },time);
       });
 };
 
-function writeFile(downloadContent){
-      return new Promise(function exec(resolve,reject){
-            console.log("We are now writing the content to a file...");
-            setTimeout(function callbackTwo(){
-                  console.log("We have written the content to the file.");
-                  let fileName = "file.txt";
-                  reject(fileName);
-            },3000);
-      });
-};
+// Lets say we have to do 3 different downloading and these tasks should be independent of each other.
 
-function uploadFile(uploadURL,writeFileName){
-      return new Promise(function exec(resolve, reject){
-            console.log("We are now uploading the file to the url",uploadURL,"...");
-            setTimeout(function callbackThree(){
-                  console.log("We have uploaded the file to the provided url.");
-                  let response = "Success";
-                  resolve(response);
-            },2000);
-      });
-};
+const source1 = download("www.neu.co.us",2000);
+const source2 = download("www.uiuc.co.us",2000);
+const source3 = download("www.asu.co.us",3000);
 
+// Now we will wrap all the promises into a bigger Promise, on which we can have a .then
+// The handler inside .then will be executed when all the promises will be fulfilled.
 
-async function executor(){
-      try{
-            let downloadContent = await download("www.northeastern_university.com");
-            console.log("The downloadable content is",downloadContent);
-      
-            let writeFileContent = await writeFile(downloadContent);
-            console.log("The file we have written into is",writeFileContent);
-      
-            let uploadContent = await uploadFile("www.dropbox.com",writeFileContent);
-            console.log("The response we get is",uploadContent);
-
-            let downloadContent = await download("www.northeastern_university.com");
-            console.log("The downloadable content is",downloadContent);
-      
-            let writeFileContent = await writeFile(downloadContent);
-            console.log("The file we have written into is",writeFileContent);
-      
-            let uploadContent = await uploadFile("www.dropbox.com",writeFileContent);
-            console.log("The response we get is",uploadContent);
-
-            let downloadContent = await download("www.northeastern_university.com");
-            console.log("The downloadable content is",downloadContent);
-      
-            let writeFileContent = await writeFile(downloadContent);
-            console.log("The file we have written into is",writeFileContent);
-      
-            let uploadContent = await uploadFile("www.dropbox.com",writeFileContent);
-            console.log("The response we get is",uploadContent);
-
-      }catch(error){
-
-            console.log("The error we received is",error);
-
-      }finally{
-
-            console.log("Have a good day...");
-            
-      }
-
-}
-
-executor();
+Promise.all([source1,source2,source3]).then((data) => {console.log("The output is",data)});
