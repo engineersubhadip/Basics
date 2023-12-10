@@ -46,9 +46,12 @@ function orderBilling(processOrderResponse){
 }
 
 
-placeOrder("coffee")
+placeOrder("tea")
 .then(function one(data){
       return processOrder(data)
+})
+.catch(function oneReject(errorMessage){
+      console.log("Order cannot be placed");
 })
 .then(function two(data){
       console.log(data);
@@ -58,8 +61,6 @@ placeOrder("coffee")
       console.log("Your Bill is",data);
       
 })
-.catch(function oneReject(errorMessage){
-      console.log("Order cannot be placed");
-})
+
 
 
