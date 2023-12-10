@@ -17,7 +17,7 @@ function writeFile(downloadContent){
             setTimeout(function callbackTwo(){
                   console.log("We have written the content to the file.");
                   let fileName = "file.txt";
-                  reject(fileName);
+                  resolve(fileName);
             },3000);
       });
 };
@@ -33,6 +33,8 @@ function uploadFile(uploadURL,writeFileName){
       });
 };
 
+// Finally keyword will always be executed does not matter if all you promises get executed, still finally block will execute.
+// If your promise Chain breaks in between and you execute the catch() block, still finally will execute.
 
 download("www.socerrerssupreme.hvd")
 .then(function handlerOne(data){
@@ -46,7 +48,8 @@ download("www.socerrerssupreme.hvd")
 .then(function handlerThree(data){
       console.log("Your file has been",data,"-fully uploaded");
 })
-.catch((data) => {console.log("The error is",data)});
+.catch((data) => {console.log("The error is",data)})
+.finally(() => {console.log("The end of the Promise Chain")});
 
 // async function executor(){
 //       let downloadContent = await download("www.sorcerrer's_supreme.hwd");
