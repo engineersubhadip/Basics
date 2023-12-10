@@ -38,5 +38,4 @@ async function outer(){
 }
 
 let response = outer();
-console.log("This is the response",response);
 response.then((data)=>{console.log(data)});
