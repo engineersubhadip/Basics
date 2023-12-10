@@ -17,7 +17,7 @@ function writeFile(downloadContent){
             setTimeout(function callbackTwo(){
                   console.log("We have written the content to the file.");
                   let fileName = "file.txt";
-                  resolve(fileName);
+                  reject(fileName);
             },3000);
       });
 };
@@ -46,3 +46,19 @@ download("www.socerrerssupreme.hvd")
 .then(function handlerThree(data){
       console.log("Your file has been",data,"-fully uploaded");
 })
+.catch((data) => {console.log("The error is",data)});
+
+// async function executor(){
+//       let downloadContent = await download("www.sorcerrer's_supreme.hwd");
+//       console.log("The downloadable content is",downloadContent);
+
+//       let writeFileContent = await writeFile(downloadContent);
+//       console.log("The file in which we have written is",writeFileContent);
+
+//       let uplaodContent = await uploadFile("www.dropbox.co.in",writeFileContent);
+//       console.log("The response is",uplaodContent);
+// }
+
+// let finalResult = executor();
+
+// finalResult.then((data) => {console.log(data)});
