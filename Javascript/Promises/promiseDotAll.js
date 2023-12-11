@@ -11,16 +11,20 @@ function download(downloadURL,time){
             setTimeout(function callbackOne(){
                   console.log("We have downloaded the content from the given url.");
                   let content = "The Phoenix must burn to emerge";
-                  resolve(content);
+                  if (time > 2000){
+                        reject("Cannot Download this");
+                  }else{
+                        resolve(content);
+                  }
             },time);
       });
 };
 
 // Lets say we have to do 3 different downloading and these tasks should be independent of each other.
 
-const source1 = download("www.neu.co.us",2000);
+const source1 = download("www.neu.co.us",1500);
 const source2 = download("www.uiuc.co.us",2000);
-const source3 = download("www.asu.co.us",3000);
+const source3 = download("www.asu.co.us",2000);
 
 // Now we will wrap all the promises into a bigger Promise, on which we can have a .then
 // The handler inside .then will be executed when all the promises will be fulfilled.
