@@ -1,12 +1,5 @@
-let hm = {};
-let array = ['a', 'b', 'c', 'd', 'e','e'];
+let arr = [12,13,"riri",54];
 
-for (let i = 0; i < array.length; i++) {
-  if (hm[array[i]] === undefined) {
-    hm[array[i]] = 1;
-  } else {
-    hm[array[i]] += 1;
-  }
-}
+let val = arr.includes(54);
 
-console.log(hm);
+console.log(val);
