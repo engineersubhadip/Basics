@@ -1,0 +1,1 @@
+// You need to display real-time data from multiple sources on a dashboard. Describe how you would use concurrent API calls to fetch and update this data efficiently.
