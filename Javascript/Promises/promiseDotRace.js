@@ -15,8 +15,8 @@ function download(downloadURL,time){
       });
 };
 
-const source1 = download("www.neu.co.us",500);
+const source1 = download("www.neu.co.us",2500);
 const source2 = download("www.uiuc.co.us",2600);
 const source3 = download("www.asu.co.us",2700);
 
-Promise.race([source1,source2,source3]).then((data) => {console.log("The data is",data)})
+Promise.race([source1,source2,source3]).then((data) => {console.log("The data is",data)}).catch((data) => {console.log("The error is",data)});
