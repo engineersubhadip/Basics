@@ -17,7 +17,7 @@ function posts(){
             console.log("We are now fetching the list of Posts...");
             setTimeout(function callbackTwo(){
                   let content = ["This is good","How much is the price ?","What is the return date ?"];
-                  resolve(content);
+                  reject(content);
             },4000);
       });
 };
