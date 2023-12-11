@@ -1,0 +1,1 @@
+// Suppose there is a dependency between the results of two API requests, where the second request requires data from the first one. How would you handle this situation using async/await and concurrent API calls?
