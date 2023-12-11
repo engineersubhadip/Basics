@@ -6,7 +6,7 @@ function location(targetLocation,delay){
             console.log("We are now fetching data for",targetLocation,"...");
             setTimeout(function callback(){
                   let content = targetLocation + " " + "22.3 C";
-                  reject(content);
+                  resolve(content);
             },delay);
       });
 };
