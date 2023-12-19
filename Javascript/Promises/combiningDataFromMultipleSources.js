@@ -31,13 +31,26 @@ async function executor(){
 
 }
 
-executor()
-.then(function(data){
-      let finalResult = data.reduce(function(acc,curr){
-            acc = acc+" "+curr;
-            return acc;
-      },"");
+// executor()
+// .then(function(data){
+//       let finalResult = data.reduce(function(acc,curr){
+//             acc = acc+" "+curr;
+//             return acc;
+//       },"");
 
-      console.log(finalResult);
-})
-.catch((data) => {console.log(data)});
+//       console.log(finalResult);
+// })
+// .catch((data) => {console.log(data)});
+
+
+async function main(){
+      try{
+            let response = await executor();
+            console.log("The executor returned Success");
+      }
+      catch(error){
+            console.log(error);
+      }
+}
+
+main();
