@@ -66,24 +66,24 @@ src = './assets/profile.png'
     <script src="script.js">
     </script>
     <script>
-        let ticketArray = document.querySelectorAll(".ticket-cont .ticket-lock");
-        
-        for (let i=0; i<ticketArray.length; i++){
-            let currentTicket = ticketArray[i];
-            let currentParent = ticketArray[i].parentElement.querySelector(".task-area");
-            
-            currentTicket.addEventListener("click",function(e){
-                if (currentTicket.querySelector("button").textContent == "Locked"){
-                    currentTicket.querySelector("button").textContent = "Unlocked";
-                    currentParent.setAttribute("contenteditable",true);
+        let ticketArray = document.querySelectorAll(".ticket-cont");
 
-                }else{
-                    currentTicket.querySelector("button").textContent = "Locked";
-                    currentParent.setAttribute("contenteditable",false);
+        let toolboxColor = document.querySelector(".toolbox-priority-cont");
+
+        toolboxColor.addEventListener("click",function(e){
+            if(e.target.classList.contains("color")){
+                let selectedColor = e.target.classList[0];
+                for (let i=0; i<ticketArray.length; i++){
+                    let currentColor = ticketArray[i].querySelector(".ticket-color").classList[1];
+                    
+                    if (currentColor == selectedColor){
+                        ticketArray[i].style.display = "block";
+                    }else{
+                        ticketArray[i].style.display = "none";
+                    }
                 }
-            })
-
-        }
+            }
+        })
         
     </script>
 
