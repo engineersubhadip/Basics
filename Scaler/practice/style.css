@@ -42,10 +42,7 @@
     font-size: 2rem;
     align-items: center;
     color: white;
-  }
   
-  .action-btn-cont:hover {
-    cursor: pointer;
   }
   
   .color {
@@ -158,6 +155,11 @@
   }
   
   .add-btn:hover {
+    background-color: #4BB543;
+  }
+  
+  
+  .remove-btn:hover {
     background-color: #4BB543;
   }
   

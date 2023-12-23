@@ -37,7 +37,10 @@ let ticketsArr = [
   
     ticketCont.innerHTML = `<div class="ticket-color ${ticketColor}"></div>
          <div class="ticket-id">${id}</div>
-         <div class="task-area">${ticketTask}</div>`;
+         <div class="task-area">${ticketTask}</div>
+         <div class="ticket-lock">
+         <button>Locked</button>
+        </div>`;
   
     let mainCont = document.querySelector(".main-cont");
     mainCont.append(ticketCont);
@@ -47,4 +50,5 @@ let ticketsArr = [
       localStorage.setItem("tickets", JSON.stringify(ticketsArr));
     }
   }
+  
   
