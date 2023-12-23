@@ -32,7 +32,9 @@ src = './assets/profile.png'
             <div class="black color"></div>
         </div>
 
-
+        <div class="search-bar">
+            <input type="text">
+        </div>
     </div>
 
     <!-- MAIN CONTAINER - Tickets holder -->
@@ -83,6 +85,36 @@ src = './assets/profile.png'
                     }
                 }
             }
+        });
+
+        // Filtering results via search bar
+
+        let searchbar = document.querySelector(".search-bar input");
+
+        searchbar.addEventListener("keyup",function(e){
+            
+            let userValue = searchbar.value;
+            let finalUserValue = userValue.toLowerCase();
+            
+            if (finalUserValue.length == 0){
+                return;
+            }else{
+                for (let i=0; i<ticketArray.length; i++){
+                    let currentTicketContent = ticketArray[i].querySelector(".task-area").textContent;
+                    currentTicketContent = currentTicketContent.toLowerCase();
+
+                    let currentTicketSubstring = currentTicketContent.substring(0,finalUserValue.length);
+
+                    if (finalUserValue == currentTicketSubstring){
+                        ticketArray[i].style.display = "block";
+                    }else{
+                        ticketArray[i].style.display = "none";
+                    }
+
+                }
+            }
+            
+
         })
         
     </script>
