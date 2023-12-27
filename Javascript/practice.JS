@@ -1,5 +1,18 @@
-let arr = [12,13,"riri",54];
+let array = [2,3,4,5,2,3];
 
-let val = arr.includes(54);
 
-console.log(val);
+function callback(element){
+    return element*element;
+}
+
+function mapMimic(array,callback){
+    let result = [];
+    for (let i=0; i<array.length; i++){
+        let value = callback(array[i]);
+        result.push(value);
+    }
+    return result;
+}
+
+let output = mapMimic(array,callback);
+console.log(output);
