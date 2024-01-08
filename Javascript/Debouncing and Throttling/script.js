@@ -1,12 +1,9 @@
-let target = document.querySelector("div");
+let inputBox = document.querySelector("input");
 
-let timerID = setTimeout(function(){
-    target.style.height = "500px";
-    target.style.width = "500px";
-},5000);
+let count = 0;
 
-let button = document.querySelector("button");
+inputBox.addEventListener("keyup",function(e){
+    count +=1;
 
-button.addEventListener("click",function(){
-    clearTimeout(timerID);
+    console.log("Network Call made",count);
 })
