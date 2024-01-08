@@ -5,4 +5,8 @@ let timerID = setTimeout(function(){
     target.style.width = "500px";
 },5000);
 
-clearTimeout(timerID);
+let button = document.querySelector("button");
+
+button.addEventListener("click",function(){
+    clearTimeout(timerID);
+})
