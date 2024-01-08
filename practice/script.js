@@ -1,7 +1,6 @@
-let parent = document.querySelector(".parent");
+let target = document.querySelector("div");
 
-parent.addEventListener("click",function(e){
-    if (e.target.classList.contains("child")){
-        console.log("Clicked");
-    }
-})
+setTimeout(function(){
+    target.style.height = "500px";
+    target.style.width = "500px";
+},5000);
