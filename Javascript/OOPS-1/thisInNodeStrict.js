@@ -21,3 +21,7 @@ let obj = {
 };
 
 obj.sayHello(); // We will get parent object itself
+
+let result = obj.sayHello;
+
+result(); // This will give us undefined as we are executing the function in STRICT Mode and doing DIRECT Invocation
