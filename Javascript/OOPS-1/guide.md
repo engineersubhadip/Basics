@@ -6,3 +6,10 @@ If the function is getting invoked via `Direct Invocation`, then the value of `t
 
 If the function is getting invoked via `Method Invocation`, then the value of `this` keyword will be `the parent object itself`.
 
+3. `In Node :- Non Strict Mode :-` :-> 
+
+console.log(this) -> Empty object
+
+func() (Direct Invocation) -> Global Object
+
+obj.func() (Method Invocation) -> Parent Object itself
