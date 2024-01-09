@@ -1,0 +1,1 @@
+console.log(this); // Global/ Window Object
