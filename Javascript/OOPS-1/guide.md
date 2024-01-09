@@ -19,3 +19,5 @@ obj.func() (Method Invocation) -> Parent Object itself
 console.log(this) -> Empty Object
 
 func() (Direct Invocation) -> undefined
+
+obj.func() (Method Invocation) -> Parent Object itself
