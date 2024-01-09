@@ -20,4 +20,4 @@ let obj = {
     }
 };
 
-obj.sayHello();
+obj.sayHello(); // We will get parent object itself
