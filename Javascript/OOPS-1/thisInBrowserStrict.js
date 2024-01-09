@@ -23,3 +23,7 @@ let obj = {
 
 obj.sayHello(); // This will return us the Parent Object Itself
 
+let res = obj.sayHello;
+
+res(); // This is a Direct Invocation. We will be getting parent object itself
+
