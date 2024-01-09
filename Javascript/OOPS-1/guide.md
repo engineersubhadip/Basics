@@ -42,7 +42,7 @@ obj.sayHello() (Method Invocation) -> We will get the Parent Object itself
 
 Every time we `call the function` using the `new keyword`, a new empty object gets created and `this keyword` points to the empty object.
 
-Identifying the `difference between normal and constructor` function is that, in constructor function. The first alphabet will be CAPITAL.
+Identifying the `difference between normal and constructor` function is that, in constructor function. The first alphabet will be CAPITAL. And we call the constructor function with the `new` keyword.
 
 **Note**
 
