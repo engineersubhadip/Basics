@@ -34,7 +34,7 @@ function f(){
         console.log(this);
     }
 
-    g();
+    g(); // Direct Invocation :- This will give undefined
 }
 
 f(); // -> This will return undefined
