@@ -30,6 +30,12 @@ func() (Direct Invocation) -> window/global Object
 
 obj.func() (Method Invocation) -> Parent Object itself
 
+6. `In Browser :- Strict Mode` ->
+
+console.log(this) -> We are getting Global/Window Object.
+
+
+
 **Note**
 
 In case of Nested Function, we are only concerned about the function inside which we are writing `this` and how that function is getting called. Not the other function which encapsulates it.

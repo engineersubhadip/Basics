@@ -1,4 +1,6 @@
 "use strict"
 
-console.log(this); // This will return Window Object
+console.log(this); // This will return Global/Window Object
+
+
 
