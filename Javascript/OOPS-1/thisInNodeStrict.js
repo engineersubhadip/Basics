@@ -6,4 +6,4 @@ function f(){
     console.log(this);
 }
 
-f();
+f(); // We get undefined

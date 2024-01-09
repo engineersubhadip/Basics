@@ -13,3 +13,9 @@ console.log(this) -> Empty object
 func() (Direct Invocation) -> Global Object
 
 obj.func() (Method Invocation) -> Parent Object itself
+
+4. `In Node :- Strict Mode :-` ->
+
+console.log(this) -> Empty Object
+
+func() (Direct Invocation) -> undefined
