@@ -40,5 +40,11 @@ let ob1 = {
 
 ob1.saysHello(); // This is a Method Invocation. So it will return the Parent Object itself. From that object we are getting the value of the `name` key. So, "Pascal" will be printed
 
+// * Scenario -02
+
+let res1 = ob1.saysHello; // res1 will have the anonymous function
+
+res1(); // We are now using direct invocation of the anonymous function in the Strict Mode. This will give undefined. As this will be undefined and we are doing undefined.name so error
+
 
 
