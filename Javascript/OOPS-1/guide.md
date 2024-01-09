@@ -36,6 +36,12 @@ console.log(this) -> We are getting Global/Window Object.
 
 func() (Direct Invocation) -> We will get undefined
 
+obj.sayHello() (Method Invocation) -> We will get the Parent Object itself
+
 **Note**
 
 In case of Nested Function, we are only concerned about the function inside which we are writing `this` and how that function is getting called. Not the other function which encapsulates it.
+
+**Note**
+
+In case of `Strict Mode` in both `Node` and `Browser` we get `undefined` for `Direct Invocation`.

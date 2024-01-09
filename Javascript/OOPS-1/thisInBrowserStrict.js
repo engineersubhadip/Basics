@@ -11,3 +11,15 @@ function fn(){
 
 fn(); // This will return undefined
 
+//  * Method Invocation
+
+let obj = {
+    name : "Peter",
+    company:"New Company",
+    sayHello:function(){
+        console.log(this);
+    }
+};
+
+obj.sayHello(); // This will return us the Parent Object Itself
+
