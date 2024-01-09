@@ -38,6 +38,8 @@ func() (Direct Invocation) -> We will get undefined
 
 obj.sayHello() (Method Invocation) -> We will get the Parent Object itself
 
+7. When we call a function using the `new` keyword, then inside the function we create a new empty object and `this` is pointing to the newly created object. And by default we return the newly created object.
+
 **Note**
 
 In case of Nested Function, we are only concerned about the function inside which we are writing `this` and how that function is getting called. Not the other function which encapsulates it.
