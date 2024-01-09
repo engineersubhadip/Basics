@@ -1,18 +1,11 @@
-let array = [2,3,4,5,2,3];
-
-
-function callback(element){
-    return element*element;
+function f(){
+    return 97;
 }
 
-function mapMimic(array,callback){
-    let result = [];
-    for (let i=0; i<array.length; i++){
-        let value = callback(array[i]);
-        result.push(value);
-    }
-    return result;
-}
+let x = console.log(f());
 
-let output = mapMimic(array,callback);
-console.log(output);
+console.log(x);
+
+let x1 = console.log("new One");
+
+console.log(x1);
