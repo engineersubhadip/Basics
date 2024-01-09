@@ -29,3 +29,7 @@ console.log(this) -> window/global Object
 func() (Direct Invocation) -> window/global Object
 
 obj.func() (Method Invocation) -> Parent Object itself
+
+**Note**
+
+In case of Nested Function, we are only concerned about the function inside which we are writing `this` and how that function is getting called. Not the other function which encapsulates it.
