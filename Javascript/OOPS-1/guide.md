@@ -45,3 +45,7 @@ In case of Nested Function, we are only concerned about the function inside whic
 **Note**
 
 In case of `Strict Mode` in both `Node` and `Browser` we get `undefined` for `Direct Invocation`.
+
+**Note**
+
+In all the cases when we are doing `method invocation` we get the `parent object itself`
