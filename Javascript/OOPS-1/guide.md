@@ -21,3 +21,11 @@ console.log(this) -> Empty Object
 func() (Direct Invocation) -> undefined
 
 obj.func() (Method Invocation) -> Parent Object itself
+
+5. `In Browser :- Non Strict Mode` ->
+
+console.log(this) -> window/global Object
+
+func() (Direct Invocation) -> window/global Object
+
+obj.func() (Method Invocation) -> Parent Object itself
