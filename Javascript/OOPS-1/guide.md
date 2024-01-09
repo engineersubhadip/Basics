@@ -34,7 +34,7 @@ obj.func() (Method Invocation) -> Parent Object itself
 
 console.log(this) -> We are getting Global/Window Object.
 
-
+func() (Direct Invocation) -> We will get undefined
 
 **Note**
 
