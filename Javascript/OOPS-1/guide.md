@@ -48,4 +48,4 @@ In case of `Strict Mode` in both `Node` and `Browser` we get `undefined` for `Di
 
 **Note**
 
-In all the cases when we are doing `method invocation` we get the `parent object itself`
+In all the cases when we are doing `method invocation` we get the `parent object itself`.
