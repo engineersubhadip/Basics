@@ -27,3 +27,18 @@ let res = obj.sayHello;
 
 res(); // This is a Direct Invocation. We will be getting undefined
 
+
+let ob1 = {
+    name:"Pascal",
+    location:"Juarez",
+    saysHello:function(){
+        console.log(this.name);
+    }
+};
+
+// * Scenario -01
+
+ob1.saysHello(); // This is a Method Invocation. So it will return the Parent Object itself. From that object we are getting the value of the `name` key. So, "Pascal" will be printed
+
+
+
