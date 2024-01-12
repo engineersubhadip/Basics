@@ -47,5 +47,6 @@ car2.detail();
 
 // * Way Two:-
 
-// * So instead of attaching the function definition in each and every object, we will attach the function in the common Prototype. By doing this we will save memory as the same key is removed from multiple objects and placed inside the prototype
+// * So instead of attaching the function definition in each and every object, we will attach the function in the common Prototype. By doing this we will save memory as the same key is removed from multiple objects and placed inside the prototype.
+// * All the objects will now inherit from the same common prototype.
 
