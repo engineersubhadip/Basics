@@ -45,7 +45,7 @@ car2.detail();
 //  * Since the definition of the function is not changing for the car objects we can put the function definition in the Prototype. From which every car object can inherit the function.
 
 
-// * Way Two:-
+// * Way Two:- line 21
 
 // * So instead of attaching the function definition in each and every object, we will attach the function in the common Prototype. By doing this we will save memory as the same key is removed from multiple objects and placed inside the prototype.
 // * All the objects will now inherit from  prototype.
