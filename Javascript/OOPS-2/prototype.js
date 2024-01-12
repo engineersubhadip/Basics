@@ -35,6 +35,10 @@ car1.detail();
 
 car2.detail();
 
+Car.prototype.hasOwnProperty = "haha";
+
+console.log(Car.prototype.hasOwnProperty); // Updating the value of pre-existing key inside Native prototype
+
 
 // * If I have to attach a function to all the objects of the Car 
 
