@@ -2,4 +2,4 @@
 
 Eg :- `Car` is a blueprint. And using Car whenever we create an object, we get an actual `Car`.
 
-2. Whenever we will call the class `X` with `new` keyword, it will automatically invoke the `constructor` function and the `constructor` function will return the object.
+2. Whenever we are trying to create an object for the class `X` with `new` keyword, it will automatically invoke the `constructor` function and the `constructor` function will return the object.
