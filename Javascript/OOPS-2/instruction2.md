@@ -30,4 +30,4 @@ How the class `teacher` is setting the properties and returning the object ?
 
 6. Whenever we are creating an object via `constructor` we get one extra prototype.
 
-
+7. When we implement a method inside Class, that method is not applied to each and every object. Rather that method is stored inside the Prototype. And each and every objects inherit from the Prototype.
