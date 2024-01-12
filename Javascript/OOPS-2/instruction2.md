@@ -26,3 +26,8 @@ How the class `teacher` is setting the properties and returning the object ?
 
 4. `Prototype` -> Means earlier version of a product on top of which future versions are built.
 
+5. When we create 2 different objects(without constructor) we see that both the objects are pointing to the `prototype`.
+
+6. Whenever we are creating an object via `constructor` we get one extra prototype.
+
+
