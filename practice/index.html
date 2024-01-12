@@ -3,23 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debouncing and Throttling</title>
-
-    <style>
-        div{
-            height:200px;
-            width:200px;
-            background-color: tomato;
-        }
-    </style>
+    <title>Form Submission</title>
 </head>
 <body>
-    
-    <div>
-        I am a Div
-    </div>
+    <form class="queryForm" onsubmit="submitForm(event)">
+        <div class="name">
+            <label for="name">Enter Name</label>
+            <input class="name" id="name" type="text" name="userName">
+        </div>
 
-    <button>Stop Animation</button>
-    <script src="script.js"></script>
+        <div class="query">
+            <label for="query">Enter Query</label>
+            <input class="name" id="query" type="text" name="userQuery">
+        </div>
+
+        <button class="submit" type="submit">Submit</button>
+    </form>
+
+    <script>
+
+        function submitForm(event){
+            event.preventDefault();
+            
+            let form = document.querySelector(".queryForm");
+
+            let formData = new FormData(form);
+
+            let obj = {};
+
+            for (let [key,val] of formData){
+                obj[key] = val;
+            }
+
+            console.log(obj);
+        }
+
+
+    </script>
 </body>
 </html>
