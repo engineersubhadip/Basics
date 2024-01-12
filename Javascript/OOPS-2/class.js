@@ -6,7 +6,7 @@ class Person{
         this.age = age;
     };
 
-    greet(){
+    greet(){ // This method will be added to the Common Prototype.
         console.log(`Hello, my name is ${this.name}`); // this will point to the object from which we are calling
     }
 };
@@ -43,6 +43,6 @@ console.log(teacher1);
 
 person1.greet();
 
-student1.greet(); // student class is able to inherit the greet because we are inheriting from person
+student1.greet(); // student class is able to inherit the greet because we are adding greet inside the Prototype.
 
-teacher1.greet(); // teacher class is able to inherit the greet because we are inheriting from person
+teacher1.greet(); // teacher class is able to inherit the greet because we are adding greet inside the Prototype.
