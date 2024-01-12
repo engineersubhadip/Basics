@@ -24,3 +24,5 @@ How the class `teacher` is setting the properties and returning the object ?
 
 -> In the `teacher class` we are finally setting the `strength` property in the returned object from above step and returning the final object in line 36.
 
+4. `Prototype` -> Means earlier version of a product on top of which future versions are built.
+
