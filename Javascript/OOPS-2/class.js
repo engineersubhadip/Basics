@@ -5,6 +5,10 @@ class Person{
         this.name = name;
         this.age = age;
     };
+
+    greet(){
+        console.log(`Hello, my name is ${this.name}`); // this will point to the object from which we are calling
+    }
 };
 
 const person1 = new Person("Tony",48);
@@ -36,3 +40,9 @@ class Teacher extends Student{ // Teacher class is inheriting from the Student C
 const teacher1 = new Teacher("Mr. Parker", 48, "Academy DSA", 120);
 
 console.log(teacher1);
+
+person1.greet();
+
+student1.greet(); // student class is able to inherit the greet because we are inheriting from person
+
+teacher1.greet(); // teacher class is able to inherit the greet because we are inheriting from person
