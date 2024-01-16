@@ -59,3 +59,22 @@ let o1 = {
 };
 
 console.log(o1.detail("Maths","Science")); // In a normal object, how are we passing arguments which are later being converted to key:value pair
+
+let o2 = {
+    name:"Aman",
+    class:11
+}
+
+// o2 wants to borrow the function detail from o1
+
+o1.detail.call(o2,"English","Hindi Composition");
+
+// Apply:-
+//The difference between call and apply is how we are sending the parameters inside the function we want to borrow.
+
+let o3 = {
+    name:"Surya",
+    class:12
+}
+
+o1.detail.apply(o3,["Geography","History"]);
