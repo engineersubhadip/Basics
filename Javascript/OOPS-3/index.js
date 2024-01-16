@@ -39,5 +39,9 @@ let obj1 = {
 
 obj.detail.call(obj1)
 
-// `This` keyword inside obj was pointing to obj. Now lets say if we want to use the function detail for obj1 without defining the function inside obj1. What we can do is we can first try to access the function defined inside obj by obj.detail And then do .call(obj1). By doing the last part `this` keyword will now point to obj1
+// `This` keyword inside obj was pointing to obj. Now lets say if we want to use the function detail for obj1 without defining the function inside obj1. What we can do is we can first try to access the function defined inside obj by obj.detail And then do .call(obj1). By doing the last part `this` keyword will now point to obj1 and also we are calling the function detail.
+
+// So basically if one object needs to borrow a function from another object.
+// We firstly get the access to the function present in first object. Then we use .call(pass in another object). By doing this, the `this` keyword present inside the function will now point to `another object`.
+// Also, by doing .call(another obj) we are executing the function.
 
