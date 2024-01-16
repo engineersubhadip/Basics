@@ -45,3 +45,17 @@ obj.detail.call(obj1)
 // We firstly get the access to the function present in first object. Then we use .call(pass in another object). By doing this, the `this` keyword present inside the function will now point to `another object`.
 // Also, by doing .call(another obj) we are executing the function.
 
+
+// Example Two :-
+
+let o1 = {
+    name:"Peter",
+    class:12,
+    detail:function(subject1,subject2){
+        this.subject1 = subject1;
+        this.subject2 = subject2;
+        console.log("The value of this is",this);
+    }
+};
+
+console.log(o1.detail("Maths","Science")); // In a normal object, how are we passing arguments which are later being converted to key:value pair
