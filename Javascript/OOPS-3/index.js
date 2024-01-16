@@ -37,7 +37,7 @@ let obj1 = {
     color:"blue"
 }
 
-console.log(obj.detail.call(obj1)) 
+obj.detail.call(obj1)
 
 // `This` keyword inside obj was pointing to obj. Now lets say if we want to use the function detail for obj1 without defining the function inside obj1. What we can do is we can first try to access the function defined inside obj by obj.detail And then do .call(obj1). By doing the last part `this` keyword will now point to obj1
 
