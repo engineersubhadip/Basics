@@ -78,3 +78,5 @@ let o3 = {
 }
 
 o1.detail.apply(o3,["Geography","History"]);
+
+console.log(o3);

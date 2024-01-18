@@ -3,32 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debouncing</title>
+    <title>Circular Reload</title>
+    <style>
+        html{
+            box-sizing: border-box;
+        }
+
+        *,*::after,*::before{
+            box-sizing: inherit;
+        }
+
+        
+    </style>
 </head>
 <body>
-    <input class="inputBox" type="text">
-
-    <script>
-        let inputBox = document.querySelector(".inputBox");
-        let count = 0;
-
-        function callBack(){
-            count+=1;
-            console.log(`${inputBox.value} and ${count}`);
-        };
-
-        function debounce(callBack,delay){
-            let timerId;
-            return function(){
-                clearTimeout(timerId);
-                timerId = setTimeout(callBack,delay);
-            };
-        };
-
-        let optFnc = debounce(callBack,3000);
-
-        inputBox.addEventListener("keyup",optFnc);
-
-    </script>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    <script src="./script.js"></script>
 </body>
 </html>

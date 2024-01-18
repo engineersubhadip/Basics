@@ -1,12 +1,13 @@
-let target = document.querySelector("div");
+console.log("Hello World");
 
-let timerID = setTimeout(function(){
-    target.style.height = "500px";
-    target.style.width = "500px";
-},5000);
+for (let i=0; i<3; i++){
+    setTimeout(function(){
+        console.log("Timer Done !");
+    },10);
+};
 
-let button = document.querySelector("button");
+for (let i=0; i<1000000000; i++){
 
-button.addEventListener("click",function(){
-    clearTimeout(timerID);
-})
+}
+
+console.log("End of Program");
