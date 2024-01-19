@@ -1,13 +1,26 @@
-console.log("Hello World");
+let count = 0;
 
-for (let i=0; i<3; i++){
-    setTimeout(function(){
-        console.log("Timer Done !");
-    },10);
-};
-
-for (let i=0; i<1000000000; i++){
-
+function callback(){
+    count+=1;
+    console.log(count);
 }
 
-console.log("End of Program");
+function debounce(callback,delay){
+    let timerID = undefined;
+    return function(){
+        clearTimeout(timerID);
+        timerID = setTimeout(function f(){
+            callback();
+        },delay);
+    }
+}
+
+let input = document.querySelector("input");
+
+let fxn = debounce(callback,2000);
+
+input.addEventListener("keyup",fxn);
+
+// input.addEventListener("keyup",function f(){
+//     callback();
+// })
