@@ -7,8 +7,18 @@ let result1 = arr.reduce(function(acc,curr){
 
 Array.prototype.customReduce = function(callback,accValue){
     // customReduce will iterate through each and every element of the array and invoke the callback and store the result inside accumulator
-    let result = accValue;
-    for (let i=0; i<this.length; i++){
+
+    let result = undefined;
+    let startIndex = undefined;
+
+    if (accValue == undefined){
+        result = this[0];
+        startIndex = 1;
+    }else{
+        result = accValue;
+        startIndex = 0;
+    }
+    for (let i=startIndex; i<this.length; i++){
         result = callback(result,this[i]);
     }
     return result;
