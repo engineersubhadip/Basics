@@ -1,4 +1,4 @@
-const beasts = ['ant', 'bison', 'camel', 'duck', 'bison','duck'];
+const beasts = ['ant', 'bison', 'camel', 'duck', 'bison', 'duck'];
 
 console.log(beasts.indexOf('bison'));
 
