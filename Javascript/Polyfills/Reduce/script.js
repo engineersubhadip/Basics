@@ -15,8 +15,12 @@ Array.prototype.customReduce = function(callback,accValue){
 };
 
 let result2 = arr.customReduce(function(acc,curr){
-    acc = acc + curr;
+    if (acc[curr] == undefined){
+        acc[curr] = 1;
+    }else{
+        acc[curr]+=1;
+    }
     return acc;
-},0);
+},{});
 
 console.log(result2);
