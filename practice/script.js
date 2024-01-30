@@ -1,10 +1,10 @@
-"use strict"
-
 let obj = {
-    name:"Stark",
-    sayHello:function(){
-        this.age = 45;
+    a : function(){
+        function b(){
+            console.log(this);
+        }
+        b();
     }
 }
-let res = obj.sayHello;
-res();
+
+obj.a();
