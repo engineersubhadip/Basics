@@ -7,4 +7,5 @@ let obj = {
     }
 }
 
-obj.a();
+let x = obj.a;
+x();
