@@ -1,26 +1,10 @@
-let count = 0;
+"use strict"
 
-function callback(){
-    count+=1;
-    console.log(count);
-}
-
-function debounce(callback,delay){
-    let timerID = undefined;
-    return function(){
-        clearTimeout(timerID);
-        timerID = setTimeout(function f(){
-            callback();
-        },delay);
+let obj = {
+    name:"Stark",
+    sayHello:function(){
+        this.age = 45;
     }
 }
-
-let input = document.querySelector("input");
-
-let fxn = debounce(callback,2000);
-
-input.addEventListener("keyup",fxn);
-
-// input.addEventListener("keyup",function f(){
-//     callback();
-// })
+let res = obj.sayHello;
+res();
