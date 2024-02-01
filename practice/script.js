@@ -17,6 +17,9 @@ console.log(person1);
 
 console.log(person2);
 
-// Person.prototype.sayHello = function(){
-//     console.log(this.name+" says hello there !!");
-// }
+Person.prototype.sayHello = function(){
+    console.log(this.name+" says hello there !!");
+}
+
+person1.sayHello();
+person2.sayHello();
