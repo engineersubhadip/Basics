@@ -56,4 +56,15 @@ class Teacher extends Student{
 
 let teacher1 = new Teacher("Altwell",33,"Web Architecture",33);
 
+
 console.log(teacher1);
+
+teacher1.greet();
+
+class RaceCourse{
+    constructor(name){
+        this.name = name;
+    }
+}
+
+// let r1 = new RaceCourse("Golf Course"); -> Because this class is not inheriting anything from Person Class
