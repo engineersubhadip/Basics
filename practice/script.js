@@ -3,11 +3,16 @@ class Person{
         this.name = name;
         this.age = age;
     }
+    // Adding a function to a class
+    greet(){
+        console.log(this.name+" says hello!");
+    }
 }
 
 let person1 = new Person("Subhadip",29);
 
 console.log(person1);
+person1.greet(); // Method Invocation, so this will point to parent object. 
 
 
 
