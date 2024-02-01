@@ -1,25 +1,21 @@
-// I want to add a function to each and every object. (Ex Detail of Car). Where should I add this function
-
-function Car(name,speed){
+function Laptop(name,price,ramSize){
     this.name = name;
-    this.speed = speed;
-    // this.detail = function(){
-    //     console.log(`The speed is ${this.speed} and the name is ${this.name}`);
-    // }
+    this.price = price;
+    this.ramSize = ramSize;
 }
 
-Car.prototype.detail = function(){
-    console.log(`The speed is ${this.speed} and the name is ${this.name}`);
+Laptop.prototype.detail = function(){
+    console.log(`Name is ${this.name}, price is ${this.price} and ram is ${this.ram}`);
 }
 
-let c1 = new Car("Bmw",320);
+let l1 = new Laptop("Dell",1300,8);
 
-let c2 = new Car("Nissan",180);
+let l2 = new Laptop("Lenovo",1100,8);
 
-console.log(c1);
+console.log(l1);
+console.log(l2);
 
-console.log(c2);
 
-c1.detail();
+l1.detail();
 
-c2.detail();
+l2.detail();
