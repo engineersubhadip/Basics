@@ -37,3 +37,18 @@ class Student extends Person{ // Means the Student class will inherit some prope
 let s2 = new Student("Sam",24,"Web Fundamentals");
 
 console.log(s2);
+
+// Lets create another class Teacher with properties such as name, age, batch, class_strength
+
+// * We shall be inheriting properties from Student class.
+
+class Teacher extends Student{
+    constructor(name,age,batch,class_strength){
+        super(name,age,batch);
+        this.class_strength = class_strength;
+    }
+}
+
+let teacher1 = new Teacher("Altwell",33,"Web Architecture",33);
+
+console.log(teacher1);
