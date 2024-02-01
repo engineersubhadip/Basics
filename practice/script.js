@@ -1,18 +1,22 @@
-function Car(name,price,top_speed){
-    console.log(this);
+// Write a constructor function for a Person having name and age property.
+
+function Person(name,age){
+    // this keyword will point to an empty object
     this.name = name;
-    this.price = price;
-    this.top_speed = top_speed;
-    // console.log(this) -> {name:"Nissan",price:1230000, top_speed:"260Km/hr"}
-    console.log(this);
+    this.age = age;
+    // The default return type is "this" keyword
+    // {name:"Subhadip", age:28} -> Person1
+    // {name:"Aman", age:30} -> Person2
 }
 
+let person1 = new Person("Subhadip",28);
 
-let nissan = new Car("Nissan",1230000,"260Km/hr");
+let person2 = new Person("Aman",30);
 
-let toyota = new Car("Toyota",1000000,"188Km/hr");
+console.log(person1);
 
-console.log(nissan);
+console.log(person2);
 
-console.log(toyota);
-
+// Person.prototype.sayHello = function(){
+//     console.log(this.name+" says hello there !!");
+// }
