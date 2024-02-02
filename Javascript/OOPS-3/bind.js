@@ -14,9 +14,9 @@ let person2 = {
     age:26
 }
 
-let result = person1.greet.bind(person2);
+let result = person1.greet.bind(person2);  // Bind will always return a function, in this case greet. And the value of `this` inside greet will always point to person2
 console.log(result)
 
 result("June","July");
 
-console.log(person2)
+console.log(person2);
