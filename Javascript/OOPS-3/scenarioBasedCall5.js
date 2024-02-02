@@ -1,0 +1,2 @@
+// Prototype Chain Usage:
+// Consider a scenario where you have a prototype object shape with a method area. You also have another object rectangle that has properties width and height, and it should inherit the area method from shape. How would you utilize the call method to link rectangle with shape?
