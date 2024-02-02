@@ -1,21 +1,21 @@
-function Laptop(name,price,ramSize){
-    this.name = name;
-    this.price = price;
-    this.ramSize = ramSize;
+let arr1 = [12,13,14,14]
+
+// let result = arr1.map(function(ele){
+//     return ele*ele;
+// });
+// console.log(result);
+
+Array.prototype.customMap = function(callback){
+    let result = [];
+    for (let i=0; i<this.length; i++){
+        let currRes = callback(this[i]);
+        result.push(currRes);
+    }
+    return result;
 }
 
-Laptop.prototype.detail = function(){
-    console.log(`Name is ${this.name}, price is ${this.price} and ram is ${this.ram}`);
-}
+let val1 = arr1.customMap(function(ele){
+    return ele*ele;
+});
 
-let l1 = new Laptop("Dell",1300,8);
-
-let l2 = new Laptop("Lenovo",1100,8);
-
-console.log(l1);
-console.log(l2);
-
-
-l1.detail();
-
-l2.detail();
+console.log(val1);
