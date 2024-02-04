@@ -1,27 +1,18 @@
-let car = {
-    name: "Mercedes",
-    color: "White",
-};
-  
-function buyCar() {
-    console.log(`I bought a ${this.color} ${this.name}`);
+function calculate(a,b){
+    return a+b;
 }
 
-buyCar.call(car, 100000);
-
-Function.prototype.myCall = function(obj, ...args){
-    console.log(this); // it's a buyCar function. 
-    console.log(obj); // { name: 'Mercedes', color: 'White' }
-    obj.fxn = this;
-    //obj = {
-    //     name:"Mercedes",
-    //     color:"White",
-    //     fxn:function buyCar(){
-    //         console.log(`I bought a ${this.color} ${this.name}`);
-    //     }
-    // }
-    // console.log(obj);
-    obj.fxn(...args);
+let obj1 = {
+    val1:10,
+    val2:20
 }
 
-buyCar.myCall(car);
+let obj2 = {
+    val1:22,
+    val2:33
+}
+
+console.log(calculate.call(obj1,obj1.val1,obj1.val2));
+
+console.log(calculate.call(obj2,obj2.val1,obj2.val2));
+
