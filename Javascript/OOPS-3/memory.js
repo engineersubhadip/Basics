@@ -60,15 +60,75 @@
 
 // * How to create a copy:-
 
-let obj1 = {name:"Alex",age:23};
+// let obj1 = {name:"Alex",age:23};
 
-let obj2 = {...obj1}; // This creates a copy
+// let obj2 = {...obj1}; // This creates a copy
 
 // Ensure that the copy is indeed created;
 
-obj1.name = "Tony";
+// obj1.name = "Tony";
+
+// console.log(obj1);
+
+// console.log(obj2);
+
+// * Shallow Copy:-
+
+let obj1 = {
+    name:"Alex",
+    address:{
+        state:"UP",
+        pincode:1234
+    }
+}
+
+let obj2 = {...obj1} // We are creating a shallow copy of Obj1.
+
+obj1.name = "Peter"
+
+obj1.address.state = "Himachal";
 
 console.log(obj1);
 
 console.log(obj2);
+
+// For Shallow Copy, we only create a copy for the top-most object. The rest of the Nested Objects are being shared
+
+// When we do obj1 = {
+//     name:"Alex",
+//     address:{
+//         state:"UP",
+//         pincode:1234
+//     }
+// }
+
+
+// The Obj1 points to {
+//     name:"Alex",
+//     address points to {
+//         state:"UP",
+//         pincode:1234
+//     }
+// }
+
+// Next we do, let obj2 = {...obj1} . Meaning a shallow copy of Obj1 is created meaning Obj2 points to
+// {name:"Alex", address points to {
+//         state:"UP",
+//         pincode:1234
+//     }
+// }
+// }
+
+// When we do Obj1.name = "Peter". Meaning Obj1 now points to {name:Peter, address points to {
+//         state:"UP",
+//         pincode:1234
+//     }
+// }}
+
+// * Reminder both the address key are pointing to the same object {state:"UP", pincode:1234}
+
+// When we do Obj1.address.state="Himachal". Since the address is being shared now by both the objects.
+// Therefore, Obj1 -> {name:Peter, address:{state:Himachal,pincode:1234}}
+// and Obj2 -> {name:"Alex", address:{state:"Himachal",pincode:1234}}.
+
 
