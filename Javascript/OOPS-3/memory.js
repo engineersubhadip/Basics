@@ -74,23 +74,23 @@
 
 // * Shallow Copy:-
 
-let obj1 = {
-    name:"Alex",
-    address:{
-        state:"UP",
-        pincode:1234
-    }
-}
+// let obj1 = {
+//     name:"Alex",
+//     address:{
+//         state:"UP",
+//         pincode:1234
+//     }
+// }
 
-let obj2 = {...obj1} // We are creating a shallow copy of Obj1.
+// let obj2 = {...obj1} // We are creating a shallow copy of Obj1.
 
-obj1.name = "Peter"
+// obj1.name = "Peter"
 
-obj1.address.state = "Himachal";
+// obj1.address.state = "Himachal";
 
-console.log(obj1);
+// console.log(obj1);
 
-console.log(obj2);
+// console.log(obj2);
 
 // For Shallow Copy, we only create a copy for the top-most object. The rest of the Nested Objects are being shared
 
@@ -132,3 +132,35 @@ console.log(obj2);
 // and Obj2 -> {name:"Alex", address:{state:"Himachal",pincode:1234}}.
 
 
+let obj = {
+    name:"Adam",
+    friends:["Alex","Tim","Carl"],
+    address:{
+        city:"Delhi",
+        pincode:234540,
+        bornPlace:{
+            village:"No idea",
+            pincode:353530
+        }
+    }
+}
+
+let obj5 = obj;
+
+let obj7 = {...obj};
+
+let obj8 = JSON.parse(JSON.stringify(obj)); // Converting into Deep Copy
+
+obj8.friends = ["No one"]
+obj8.address.bornPlace.village = "don't know"
+
+obj7.address.city = "LA"
+obj7.name = "Alex"
+
+obj5.name = "Hales";
+obj5.address.city = "New York"
+
+console.log("The value of OBJ is",obj);
+console.log("The value of OBJ5 is",obj5)
+console.log("The value of OBJ7 is",obj7)
+console.log("The value of OBJ8 is",obj8);
