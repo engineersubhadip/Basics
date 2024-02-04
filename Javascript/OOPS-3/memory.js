@@ -27,3 +27,6 @@ console.log(obj2);
 // We do obj2 = obj1. Variable Obj2 gets created inside the Callstack and what we are storing inside Obj2 is Obj1. What is the value of Obj1 ? -> It is the heap memory reference address. So the value of Obj2 is the same heap memory reference stored inside Obj1.
 // We are doing Obj2.name = "Adam" -> We are accessing Obj2. What is there inside Obj2 ? (Heap Memory reference). We are going inside the heap memory reference {name:"Alex"} and changing it to "Adam". 
 // Now since both the objects are sharing the same memory reference, therefore, this change will be reflected to both the objects.
+
+// **Note**
+// If the value to be stored is a Primitive data type, then it would have been stored inside the Callstack itself
