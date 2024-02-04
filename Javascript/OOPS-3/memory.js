@@ -31,23 +31,23 @@
 // **Note**
 // If the value to be stored is a Primitive data type, then it would have been stored inside the Callstack itself
 
-let obj1 = {name:"Alex"};
+// let obj1 = {name:"Alex"};
 
-let obj3 = {name:"Starc"};
+// let obj3 = {name:"Starc"};
 
-let obj2 = obj1;
+// let obj2 = obj1;
 
-obj2.name = "Adam";
+// obj2.name = "Adam";
 
-obj2 = obj3;
+// obj2 = obj3;
 
-obj3.name = "Hales";
+// obj3.name = "Hales";
 
-console.log(obj1);
+// console.log(obj1);
 
-console.log(obj2);
+// console.log(obj2);
 
-console.log(obj3);
+// console.log(obj3);
 
 // Explanation:-
 // Obj1 ->{name:Alex}
@@ -57,3 +57,18 @@ console.log(obj3);
 // Obj2 = Obj3 -> We sever the existing Obj2 connection and now Obj2 -> {name:Starc}
 // Obj3.name = Hales -> Obj3 : {name:Hales} and Obj2 : {name:Hales};
 // Therefore, Obj1 -> {name:Adam} ; Obj2 -> {name: Hales}; Obj3 -> {name: Hales}
+
+// * How to create a copy:-
+
+let obj1 = {name:"Alex",age:23};
+
+let obj2 = {...obj1}; // This creates a copy
+
+// Ensure that the copy is indeed created;
+
+obj1.name = "Tony";
+
+console.log(obj1);
+
+console.log(obj2);
+
