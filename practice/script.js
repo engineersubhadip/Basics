@@ -108,7 +108,7 @@
 
 // * Array.findIndex Polyfill:-
 
-let array = [12,13,14,88,21];
+// let array = [12,13,14,88,21];
 
 // let result = array.findIndex(function(ele){
 //     if (ele > 15){
@@ -118,18 +118,50 @@ let array = [12,13,14,88,21];
 
 // console.log(result);
 
-Array.prototype.customFindIndex = function(callback){
-    for (let i=0; i<this.length; i++){
-        let currVal = callback(this[i]);
-        if (currVal){
+// Array.prototype.customFindIndex = function(callback){
+//     for (let i=0; i<this.length; i++){
+//         let currVal = callback(this[i]);
+//         if (currVal){
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
+
+// let result = array.customFindIndex(function (ele){
+//     return ele > 80;
+// });
+
+// console.log(result);
+
+// * indexOf Polyfill:-
+
+let array = [12,13,14,12,9,33,14,23];
+
+// let result = array.indexOf(9);
+
+Array.prototype.customIndexOf = function(ele,startIndex){
+    let start = undefined;
+    
+    if (startIndex == undefined){
+        start = 0;
+    }else{
+        start = startIndex;
+    }
+
+    if (start == this.length){
+        return -1;
+    }
+
+    for (let i=start; i<this.length; i++){
+        if (this[i] === ele){
             return i;
         }
     }
     return -1;
-}
+};
 
-let result = array.customFindIndex(function (ele){
-    return ele > 80;
-});
+let result = array.customIndexOf(14);
 
 console.log(result);
+
