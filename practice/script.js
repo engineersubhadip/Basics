@@ -78,10 +78,27 @@
 
 // * Polyfill of Reduce:-
 
-let array = [120,22,92,87,89,33,32,24];
+// let array = [120,22,92,87,89,33,32,24];
 
-// let answer = array.reduce(function(acc,curr){
-//     if (curr % 2 == 0){
+// // let answer = array.reduce(function(acc,curr){
+// //     if (curr % 2 == 0){
+// //         acc.push(curr);
+// //     }
+// //     return acc;
+// // },[]);
+
+// // console.log(answer);
+
+// Array.prototype.customReduce = function(callback,initialValue){
+//     let result = initialValue;
+//     for (let i=0; i<this.length; i++){
+//         result = callback(result,this[i]);
+//     }
+//     return result;
+// };
+
+// let answer = array.customReduce(function(acc,curr){
+//     if (curr % 3 == 0){
 //         acc.push(curr);
 //     }
 //     return acc;
@@ -89,19 +106,30 @@ let array = [120,22,92,87,89,33,32,24];
 
 // console.log(answer);
 
-Array.prototype.customReduce = function(callback,initialValue){
-    let result = initialValue;
+// * Array.findIndex Polyfill:-
+
+let array = [12,13,14,88,21];
+
+// let result = array.findIndex(function(ele){
+//     if (ele > 15){
+//         return true;
+//     }
+// });
+
+// console.log(result);
+
+Array.prototype.customFindIndex = function(callback){
     for (let i=0; i<this.length; i++){
-        result = callback(result,this[i]);
+        let currVal = callback(this[i]);
+        if (currVal){
+            return i;
+        }
     }
-    return result;
-};
+    return -1;
+}
 
-let answer = array.customReduce(function(acc,curr){
-    if (curr % 3 == 0){
-        acc.push(curr);
-    }
-    return acc;
-},[]);
+let result = array.customFindIndex(function (ele){
+    return ele > 80;
+});
 
-console.log(answer);
+console.log(result);
