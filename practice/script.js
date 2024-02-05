@@ -43,9 +43,30 @@
 
 // * PolyFill of Filter:-
 
-let array = [20,23,27,88,121];
+// let array = [20,23,27,88,121];
 
-// let result = array.filter(function(ele){
+// // let result = array.filter(function(ele){
+// //     if (ele % 2 == 0){
+// //         return true;
+// //     }else{
+// //         return false;
+// //     }
+// // });
+
+// // console.log(result);
+
+// Array.prototype.customFilter = function(callback){
+//     let result = [];
+//     for (let i=0; i<this.length; i++){
+//         let currResult = callback(this[i]);
+//         if (currResult){
+//             result.push(this[i]);
+//         }
+//     }
+//     return result;
+// };
+
+// let output = array.customFilter(function(ele){
 //     if (ele % 2 == 0){
 //         return true;
 //     }else{
@@ -53,25 +74,34 @@ let array = [20,23,27,88,121];
 //     }
 // });
 
-// console.log(result);
+// console.log(output);
 
-Array.prototype.customFilter = function(callback){
-    let result = [];
+// * Polyfill of Reduce:-
+
+let array = [120,22,92,87,89,33,32,24];
+
+// let answer = array.reduce(function(acc,curr){
+//     if (curr % 2 == 0){
+//         acc.push(curr);
+//     }
+//     return acc;
+// },[]);
+
+// console.log(answer);
+
+Array.prototype.customReduce = function(callback,initialValue){
+    let result = initialValue;
     for (let i=0; i<this.length; i++){
-        let currResult = callback(this[i]);
-        if (currResult){
-            result.push(this[i]);
-        }
+        result = callback(result,this[i]);
     }
     return result;
 };
 
-let output = array.customFilter(function(ele){
-    if (ele % 2 == 0){
-        return true;
-    }else{
-        return false;
+let answer = array.customReduce(function(acc,curr){
+    if (curr % 3 == 0){
+        acc.push(curr);
     }
-});
+    return acc;
+},[]);
 
-console.log(output);
+console.log(answer);
