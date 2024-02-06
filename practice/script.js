@@ -2,17 +2,24 @@
 
 let array = [12,13,14,91,22];
 
-// array.forEach(function(e){
-//     console.log(e+2);
+// let res = array.map(function(ele){
+//     return ele*ele;
 // });
 
-Array.prototype.customForEach = function(callback){
-    for (let i=0; i<this.length; i++){
-        callback(this[i]);
-    }
-};
+// console.log(res);
+// console.log(array);
 
-array.customForEach(function(ele){
-    console.log(ele+44);
+Array.prototype.customMap = function(callback){
+    let res = [];
+    for (let i=0; i<this.length; i++){
+        let currRes = callback(this[i]);
+        res.push(currRes);
+    }
+    return res;
+}
+
+let output = array.map(function(ele){
+    return ele**3;
 });
 
+console.log(output);
