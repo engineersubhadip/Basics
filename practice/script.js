@@ -1,25 +1,31 @@
-// * Map PolyFill:-
+// * Filter PolyFill:-
 
 let array = [12,13,14,91,22];
 
-// let res = array.map(function(ele){
-//     return ele*ele;
+// let result = array.filter(function(ele){
+//     if (ele > 15){
+//         return true;
+//     }
 // });
 
-// console.log(res);
-// console.log(array);
+// console.log(result);
 
-Array.prototype.customMap = function(callback){
-    let res = [];
+Array.prototype.customFilter = function(callback){
+    let result = [];
+
     for (let i=0; i<this.length; i++){
         let currRes = callback(this[i]);
-        res.push(currRes);
+        if (currRes){
+            result.push(this[i]);
+        }
     }
-    return res;
-}
+    return result;
+};
 
-let output = array.map(function(ele){
-    return ele**3;
+let output = array.customFilter(function(ele){
+    if (ele > 22){
+        return true;
+    }
 });
 
 console.log(output);
