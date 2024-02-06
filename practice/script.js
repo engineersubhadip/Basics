@@ -1,31 +1,34 @@
-// * Filter PolyFill:-
+// * Reduce PolyFill:-
 
-let array = [12,13,14,91,22];
+let array = [12,13,14,91,22,12,13,13];
 
-// let result = array.filter(function(ele){
-//     if (ele > 15){
-//         return true;
+// let result = array.reduce(function(acc,curr){
+//     if (acc[curr] == undefined){
+//         acc[curr]=1;
+//     }else{
+//         acc[curr]+=1;
 //     }
-// });
+//     return acc;
+// },{});
 
 // console.log(result);
 
-Array.prototype.customFilter = function(callback){
-    let result = [];
+Array.prototype.customReduce = function(callback,initialVal){
+    let result = initialVal;
 
     for (let i=0; i<this.length; i++){
-        let currRes = callback(this[i]);
-        if (currRes){
-            result.push(this[i]);
-        }
+        result = callback(result,this[i]);
     }
     return result;
-};
+}
 
-let output = array.customFilter(function(ele){
-    if (ele > 22){
-        return true;
+let output = array.customReduce(function(acc,curr){
+    if (acc[curr] == undefined){
+        acc[curr]=1;
+    }else{
+        acc[curr]+=1;
     }
-});
+    return acc;
+},{});
 
 console.log(output);
