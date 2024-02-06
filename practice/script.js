@@ -1,4 +1,4 @@
-// * For Each PolyFill:-
+// * Map PolyFill:-
 
 let array = [12,13,14,91,22];
 
