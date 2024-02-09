@@ -9,4 +9,8 @@ let obj = {
 
 obj.myTest = test;
 
-console.log(obj);
+// console.log(obj);
+
+obj.myTest();
+
+// The output will be obj itself. Because it is a method invocation
