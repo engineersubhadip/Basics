@@ -18,3 +18,5 @@ obj.myTest();
 let x = obj.myTest;
 
 x(); // We will get global object, because we are making function invocation
+
+x.call(obj) // The context of this in the function will now refer to obj being passed as an argument inside call
