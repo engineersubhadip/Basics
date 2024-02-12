@@ -24,10 +24,13 @@ function SuperCar(name,color,brand,price){
 
 SuperCar.prototype = Object.create(Car.prototype); // Equivalent to "extends" keyword
 
-SuperCar.prototype.brandName = function(){
-    return "This is the brand Name"
-}
+// SuperCar.prototype.brandName = function(){
+//     return "This is the brand Name"
+// }
 
 let s1 = new SuperCar("Nissan","Yellow","GTX",2568222);
 
 console.log(s1);
+
+// *Note
+// Inside the Prototype of SuperCar we will not have the constructor function of SuperCar because of line 25. Which states that inside the prototype of SuperCar store the prototype of Car
