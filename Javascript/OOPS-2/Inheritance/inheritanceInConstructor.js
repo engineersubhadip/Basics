@@ -1,7 +1,16 @@
 // * The task is that constructor function SuperCar will inherit from Constructor Function Car
 
-function Car(name,color){
+
+function X(name){
     this.name = name;
+}
+
+let v = new X("New One");
+
+console.log(v);
+
+function Car(name,color){
+    X.call(this,name)
     this.color = color;
     this.detail = function(){
         return `We are running details of ${this.name}`;
@@ -22,7 +31,14 @@ function SuperCar(name,color,brand,price){
     this.price = price;
 }
 
-SuperCar.prototype = Object.create(Car.prototype); // Equivalent to "extends" keyword
+// SuperCar.prototype = Object.create(Car.prototype);
+
+// SuperCar.prototype.[[Prototype]] = Object.create(Car.prototype); // Equivalent to "extends" keyword
+
+Object.setPrototypeOf(Car.prototype,X.prototype);
+
+Object.setPrototypeOf(SuperCar.prototype,Car.prototype);
+
 
 // SuperCar.prototype.brandName = function(){
 //     return "This is the brand Name"
