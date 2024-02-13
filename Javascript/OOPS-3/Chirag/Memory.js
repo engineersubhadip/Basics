@@ -54,6 +54,7 @@ var c = b;
 c.name = "Nirmal";
 
 console.log(a,b,c);
+
 // Variables are stored inside the Callstack.
 // The values that we are storing inside the variables will depend on what we are trying to store.
 // Here we are storing Reference DT. So the values will be stored in the Heap Memory and the memory address will be shared to the variables inside the Callstack.
@@ -65,3 +66,31 @@ console.log(a,b,c);
 // c.name = Nirmal -> Meaning whatever "b" and "c" were pointing to gets updated to {name:"Nirmal"}
 
 // a -> {name:"Shahbaz"} ; b -> {name:"Nirmal"} ; c -> {name:"Nirmal"}
+
+// * Example-5
+
+var a = {name:"Shahbaz"}
+
+var b = {name:"Poorna"}
+
+var temp;
+
+temp = a;
+a = b;
+b = temp;
+
+console.log(a,b);
+
+// Variables are stored inside the Callstack.
+// The values that we are storing inside the variables will depend on what we are trying to store.
+// Here we are storing Reference DT. So the values will be stored in the Heap Memory and the memory address will be shared to the variables inside the Callstack.
+// Meaning the variables from the Callstack are pointing to the Heap Memory where the objects are being stored.
+
+// a -> {name:Shahbaz}
+// b -> {name:Poorna}
+// temp = undefined;
+// temp -> {name:Shahbaz}
+// a -> {name:Poorna}
+// b -> {name:Shahbaz}
+
+// So the output is a -> {name:Poorna} and b -> {name:Shahbaz}
