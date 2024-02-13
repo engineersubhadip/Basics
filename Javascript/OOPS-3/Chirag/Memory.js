@@ -117,3 +117,22 @@ console.log(a,b);
 // b.name = Kavya . So, b -> {name:Kavya}
 
 // So, a -> {name:Poorna} and b -> {name:Kavya}
+
+// * Example-7
+
+let a1 = {
+    firstName:"Atul",
+    lastName:"Jha",
+    address:{
+        city:"Patna",
+        state:"Bihar"
+    }
+}
+
+let b1 = {...a1};
+
+a1.firstName = "Ashutosh";
+
+console.log(a1,b1);
+
+// At line 132 we are making a shallow copy of a1. Meaning if the a1 contains nested objects inside it then the copy will be created for only the outer most object. The rest of the Objects will be shared
