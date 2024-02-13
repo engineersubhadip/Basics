@@ -33,20 +33,17 @@ function SuperCar(name,color,brand,price){
 
 // SuperCar.prototype = Object.create(Car.prototype);
 
-// SuperCar.prototype.[[Prototype]] = Object.create(Car.prototype); // Equivalent to "extends" keyword
+Object.setPrototypeOf(SuperCar.prototype,Car.prototype); // Equivalent to "extends" keyword in Class
+// Line 39 is saying that inside the prototype of SuperCar we will put the constructor function of SuperCar and a Prototype (which when expanded will give us the constructor function of Car and another prototype)
 
-Object.setPrototypeOf(Car.prototype,X.prototype);
+Object.setPrototypeOf(Car.prototype,X.prototype);  // Equivalent to "extends" keyword in Class
+// Line 41 is saying that inside the prototype of Car we are putting the constructor function of Car and a prototype(which when expanded will give is the constructor function of X and another prototype)
+// When we expand that "another prototype from above" we will find the native JS Code
 
-Object.setPrototypeOf(SuperCar.prototype,Car.prototype);
-
-
-// SuperCar.prototype.brandName = function(){
-//     return "This is the brand Name"
-// }
 
 let s1 = new SuperCar("Nissan","Yellow","GTX",2568222);
 
 console.log(s1);
 
 // *Note
-// Inside the Prototype of SuperCar we will not have the constructor function of SuperCar because of line 25. Which states that inside the prototype of SuperCar store the prototype of Car
+// Inside the Prototype of SuperCar we will not have the constructor function of SuperCar because of line 34. Which states that inside the prototype of SuperCar store the prototype of Car
