@@ -2,16 +2,16 @@ let a = [1,[2,3,[4],5,6]];
 
 let b = [];
 
-function fxn(arr){
-    for (let i=0; i<arr.length; i++){
-        if (typeof arr[i] === "number"){
-            b.push(arr[i]);
+function unzipArray(array){
+    for (let i=0; i<array.length; i++){
+        if (typeof array[i] === "number"){
+            b.push(array[i]);
         }else{
-            fxn(arr[i]);
+            unzipArray(array[i]);
         }
     }
 }
 
-fxn(a);
+unzipArray(a);
 
 console.log(b);
