@@ -34,7 +34,7 @@ let customFetch  = function(){
 }
 
 customFetch().then(function(data){
-    console.log(data);
+    console.log(data.images);
 }).catch(function(error){
     console.log(error);
 })
