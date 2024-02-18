@@ -23,3 +23,19 @@ let data = {
     "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
   ],
 };
+
+
+let customFetch  = function(){
+    return new Promise(function(resolve,reject){
+        setTimeout(function(){
+            resolve(data);
+        },10000);
+    })
+}
+
+customFetch().then(function(data){
+    console.log(data);
+}).catch(function(error){
+    console.log(error);
+})
+
