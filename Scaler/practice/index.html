@@ -1,126 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Please NOTE that the link to assets (like images) need to be set in global context.
-For example:
-To access an image from assets folder correct way to set src attribute is 
-
-src = 'profile.png'
-
-instead of 
-
-src = './assets/profile.png'
--->
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ticket Management App</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Effect</title>
     <link rel="stylesheet" href="style.css">
-
-
 </head>
-
 <body>
-    <!-- TOOL BOX ELEMENTS -->
-    <div class="toolbox-cont">
-        <div class="toolbox-priority-cont">
-            <div class="lightpink color"></div>
-            <div class="lightgreen color"></div>
-            <div class="lightblue color"></div>
-            <div class="black color"></div>
-        </div>
-
-        <div class="search-bar">
-            <input type="text">
-        </div>
-    </div>
-
-    <!-- MAIN CONTAINER - Tickets holder -->
-    <div class="main-cont">
-        <!-- <div class="ticket-color ${ticketColor}"></div>
-       <div class="ticket-id">${id}</div>
-       <div class="task-area">${ticketTask}</div>
-       <div class="ticket-lock">
-       <button>Locked</button>
-      </div> -->
-    </div>
-    </div>
-
-    <!-- MODAL - Ticket generator window -->
-    <div class="modal-cont">
-
-        <textarea class="textArea-cont" placeholder="Enter Your Task" spellcheck="false">
-
-       </textarea>
-
-
-        <div class="priority-colors-container">
-            <div class="lightpink priority-color"></div>
-            <div class="lightgreen priority-color"></div>
-            <div class="lightblue priority-color"></div>
-            <div class="black priority-color active"></div>
-        </div>
-
-    </div>
-
-    <script src="script.js">
-    </script>
-    <script>
-        let ticketArray = document.querySelectorAll(".ticket-cont");
-
-        let toolboxColor = document.querySelector(".toolbox-priority-cont");
-
-        toolboxColor.addEventListener("click",function(e){
-            if(e.target.classList.contains("color")){
-                let selectedColor = e.target.classList[0];
-                for (let i=0; i<ticketArray.length; i++){
-                    let currentColor = ticketArray[i].querySelector(".ticket-color").classList[1];
-                    
-                    if (currentColor == selectedColor){
-                        ticketArray[i].style.display = "block";
-                    }else{
-                        ticketArray[i].style.display = "none";
-                    }
-                }
-            }
-        });
-
-        // Filtering results via search bar
-
-        let searchbar = document.querySelector(".search-bar input");
-
-        searchbar.addEventListener("keyup",function(e){
-            
-            let userValue = searchbar.value;
-            let finalUserValue = userValue.toLowerCase();
-            
-            if (finalUserValue.length == 0){
-                return;
-            }else{
-                for (let i=0; i<ticketArray.length; i++){
-                    let currentTicketContent = ticketArray[i].querySelector(".task-area").textContent;
-                    currentTicketContent = currentTicketContent.toLowerCase();
-
-                    let currentTicketSubstring = currentTicketContent.substring(0,finalUserValue.length);
-
-                    if (finalUserValue == currentTicketSubstring){
-                        ticketArray[i].style.display = "block";
-                    }else{
-                        ticketArray[i].style.display = "none";
-                    }
-
-                }
-            }
-            
-
-        })
+    <div class="container">
         
-    </script>
-
-
-
+    </div>
+    <script src="./script.js"></script>
 </body>
-
 </html>
