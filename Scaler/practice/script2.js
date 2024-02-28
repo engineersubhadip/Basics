@@ -11,4 +11,4 @@ function countDownWithTimer(userInput){
         }
     },1000);
 }
-countDownWithTimer(12);
+countDownWithTimer(10);
