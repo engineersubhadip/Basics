@@ -1,5 +1,5 @@
-function getDetails(){
-    console.log(`I bought ${this.name} car at ${this.price}`);
+function getDetails(color,speed){
+    console.log(`I bought ${this.name} car at ${this.price} of color ${color} and speed is ${speed}`);
 }
 
 let obj1 = {
@@ -12,7 +12,7 @@ let obj1 = {
 
 // * Custom Polyfill of Call
 
-Function.prototype.customCall = function(object){
+Function.prototype.customCall = function(object,...args){
     // "this" is pointing to Function
     // "Object" is pointing to obj1
 
@@ -20,10 +20,13 @@ Function.prototype.customCall = function(object){
 
     obj1.fxn = this;
 
+
     // By doing line 21, out obj1 looks like :-
     // {name:"Mercedes", price:1000000, fxn:Function}
 
-    obj1.fxn(); // By doing a Method invocation our "this" inside fxn will always point to obj1
+    obj1.fxn(...args); // By doing a Method invocation our "this" inside fxn will always point to obj1
 }
 
-getDetails.customCall(obj1);
+getDetails.customCall(obj1,"Blue","320");
+
+console.log(typeof getDetails);
