@@ -1,14 +1,38 @@
-let timerID;
+const contacts = [
+    {
+        firstName:"Kristian",
+        lastName:"Vos",
+        number:"unknown",
+        likes:["Javascript","Gaming","Foxes"]
+    }
+]
 
-function countDownWithTimer(userInput){
-    let target = userInput - 5;
-    timerID = setInterval(function(){
-        if(userInput == target){
-            clearInterval(timerID);
+
+
+
+function lookUpProfile(name, prop) {
+    // Write your code here
+    // Use console.log to output the result
+    
+    let result = contacts.filter(function(ele){
+        if(ele.firstName === name){
+            return true;
         }else{
-            console.log(userInput);
-            userInput -= 1;
+            return false;
+        };
+    });
+    
+    if (result.length == 0){
+        console.log("No such contact");
+    }else{
+
+        if(result[0][prop] == undefined){
+            console.log("No such property");
+        }else{
+            console.log(result[0][prop]);
         }
-    },1000);
-}
-countDownWithTimer(10);
+    }
+  
+  }
+
+  lookUpProfile("Kristian","lastName");
