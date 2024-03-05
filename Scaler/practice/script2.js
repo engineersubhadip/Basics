@@ -1,16 +1,12 @@
-class Car{
-    constructor(name,price){
-        this.name = name;
-        this.price = price;
+function outer(){
+    var x = 10;
+    function inner(){
+        console.log(x);
+        var x = 20;
     }
-    static getPrice(){
-        console.log(this);
-        console.log(`The price is ${this.price}`);
-    }
+    return inner;
 }
 
-let c1 = new Car("Bmw",100000);
+var closureFunc = outer();
 
-console.log(c1);
-
-Car.getPrice();
+closureFunc();
