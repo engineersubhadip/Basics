@@ -1,38 +1,16 @@
-const contacts = [
-    {
-        firstName:"Kristian",
-        lastName:"Vos",
-        number:"unknown",
-        likes:["Javascript","Gaming","Foxes"]
+class Car{
+    constructor(name,price){
+        this.name = name;
+        this.price = price;
     }
-]
-
-
-
-
-function lookUpProfile(name, prop) {
-    // Write your code here
-    // Use console.log to output the result
-    
-    let result = contacts.filter(function(ele){
-        if(ele.firstName === name){
-            return true;
-        }else{
-            return false;
-        };
-    });
-    
-    if (result.length == 0){
-        console.log("No such contact");
-    }else{
-
-        if(result[0][prop] == undefined){
-            console.log("No such property");
-        }else{
-            console.log(result[0][prop]);
-        }
+    static getPrice(){
+        console.log(this);
+        console.log(`The price is ${this.price}`);
     }
-  
-  }
+}
 
-  lookUpProfile("Kristian","lastName");
+let c1 = new Car("Bmw",100000);
+
+console.log(c1);
+
+Car.getPrice();
