@@ -14,8 +14,18 @@ let person2 = {
     age:53
 }
 
+let person3 = {
+    name:"Kat",
+    age:49
+}
+
 person1.setMovies("Batman","Hypnotic","Argo");
 
 // * We shall be using the context of setMovies to set the properties of person2.
 
 person1.setMovies.call(person2,"Two and a half men","Gentlemen","Figure of Speech");
+
+// * We shall be using the context of setMovies to set the properties of person3.
+
+person1.setMovies.apply(person3,["CatWoman","SpiderMan","Captain Marvel"]);
+
