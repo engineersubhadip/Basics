@@ -22,7 +22,7 @@ Promise.customAllSettled = function(promiseArr){
         let promiseCountToBeResolved = promiseArr.length;
     
         for (let i=0; i<promiseArr.length; i++){
-            Promise.resolve(promiseArr[i] // We are trying to resolve the ith Promise
+            promiseArr[i] // We are trying to resolve the ith Promise
             .then(function(data){
                 promiseCountToBeResolved-=1;
                 result[i] = {status:"fulfilled",value:data};
