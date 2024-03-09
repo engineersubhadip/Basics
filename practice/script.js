@@ -1,13 +1,17 @@
-async function fun(){
-    let data = await Promise.resolve("Here is the data");
-    console.log(data);
+class Dummy{
+    constructor(length){
+        this.length = length
+    }
 
-    let data2 = await Promise.resolve("Here is the second One");
-    console.log(data2);
+    setBreadth(breadth){
+        this.breadth = breadth;
+    }
 }
 
-fun();
+let rectangle = new Dummy(5);
 
-console.log(fun()); // without return and exception we always get fulfilled Promise
+console.log(rectangle);
 
-console.log("To be printed second");
+rectangle.setBreadth(12);
+
+console.log(rectangle);
