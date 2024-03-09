@@ -35,7 +35,7 @@ Promise.customPromiseAll = function(promiseArray){
 
             // We will try to resolve every Promise, if not we will reject it
 
-            Promise.resolve(promiseArray[i])
+            promiseArray[i]
 
             .then(function(data){
                 totalLength -=1;
