@@ -19,14 +19,13 @@ Function.prototype.customCall = function(object,...args){
     // * I want "this" to point at obj1
 
     obj1.fxn = this;
-
+    let result = object.fxn(...args);
+    delete(object.fxn);
+    return result;
 
     // By doing line 21, out obj1 looks like :-
     // {name:"Mercedes", price:1000000, fxn:Function}
 
-    obj1.fxn(...args); // By doing a Method invocation our "this" inside fxn will always point to obj1
 }
 
 getDetails.customCall(obj1,"Blue","320");
-
-console.log(typeof getDetails);
