@@ -1,17 +1,15 @@
-let targetElement = document.querySelector(".container");
-let counter = 1;
+let timerID;
 
-
-
-function createAnimation(elementID) {
-	setInterval(function(){
-		if(counter % 2 != 0){
-			elementID.style.backgroundColor = "blue";
-		}else{
-			elementID.style.backgroundColor = "red";
-		}
-		counter+=1;
-	},500);
+function countDown(userInput){
+	let target = userInput-5;
+	timerID = 	setInterval(function(){
+					if (userInput === target){
+						clearInterval(timerID);
+					}else{
+						console.log(userInput);
+						userInput-=1;
+					}
+				},1000);
 }
 
-createAnimation(targetElement);
+countDown(12);
