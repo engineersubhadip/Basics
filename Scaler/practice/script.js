@@ -1,37 +1,53 @@
-// Create a system to process orders where you first validate the order details, then check the inventory to see if the items are available, and finally process the payment if everything is valid.
+// * Coffee Shop Problem via the usage of Async-Await
 
-function processOrder(orderID,callback1){
-	console.log("We are now processing your order...");
-	setTimeout(function f1(){
-		console.log("We have processed your order.");
-		let data1 = "Latte";
-		callback1(data1);
-	},2000);
+function placeOrder(userOrder){
+	return new Promise(function(resolve,reject){
+		console.log("We are checking in our inventory if the order can be placed or not...");
+		setTimeout(function(){
+			if(userOrder === "coffee"){
+				resolve("We have accepted your order.");
+			}else{
+				reject("We do not serve this drink.")
+			}
+		},3000);
+	});
+};
+
+function processOrder(){
+	return new Promise(function(resolve,reject){
+		console.log("We are now processing your order...");
+		setTimeout(function(){
+			resolve("Order has been processed");
+		},4000);
+	});
+};
+
+function generateBill(){
+	return new Promise(function(resolve,reject){
+		console.log("We are now generating the bill...");
+		setTimeout(function(){
+			let amount = 12.99;
+			resolve(amount);
+		},3000);
+	});
+};
+
+async function simulateOrderScenario(userInput){
+	console.log("Booting up the scenario...");
+	try{
+		let placeOrderResponse = await placeOrder(userInput);
+		console.log(placeOrderResponse);
+	
+		let processOrderResponse = await processOrder();
+		console.log(processOrderResponse);
+	
+		let generateBillResponse = await generateBill();
+		console.log(generateBillResponse);
+	}
+	catch(error){
+		console.log("The error is ->",error);
+	}
+	console.log("Have a good day");
 }
 
-function checkInventory(orderItem,callback2){
-	console.log("We are checking in the inventory...");
-	setTimeout(function f2(){
-		console.log("We have the item in our inventory.");
-		callback2(orderItem);
-	},2500);
-}
-
-
-function processPayment(orderItem,callback3){
-	console.log("We are now processing your payment...");
-	setTimeout(function f3(){
-		console.log("We have processed your payment");
-		let data3 = "Success";
-		callback3(data3);
-	},3000);
-}
-
-processOrder("X3h91",function(response1){
-	console.log("You have ordered a",response1);
-	checkInventory(response1,function(response1){
-		processPayment(response1,function(response3){
-			console.log("The payment is",response3);
-		})		
-	})
-})
+simulateOrderScenario("Tea");
