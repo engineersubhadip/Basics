@@ -50,4 +50,4 @@ async function simulateOrderScenario(userInput){
 	console.log("Have a good day");
 }
 
-simulateOrderScenario("Tea");
+simulateOrderScenario("coffee");
