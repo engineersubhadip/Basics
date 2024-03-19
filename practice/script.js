@@ -1,17 +1,18 @@
-class Dummy{
-    constructor(length){
-        this.length = length
-    }
+let elementList = document.querySelectorAll("li");
+let referenceNode;
+let parent = document.querySelector(".container");
 
-    setBreadth(breadth){
-        this.breadth = breadth;
-    }
-}
+for (let i=1; i<elementList.length; i++){
 
-let rectangle = new Dummy(5);
+    if(Number(elementList[i].innerText) - Number(elementList[i-1].innerText) !== 1){
+        referenceNode = elementList[i];
+        break;
+    };
+};
 
-console.log(rectangle);
 
-rectangle.setBreadth(12);
+let newNode = document.createElement("li");
+newNode.innerText = "4";
 
-console.log(rectangle);
+// console.log(referenceNode.innerText);
+parent.insertBefore(newNode,referenceNode);
